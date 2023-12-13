@@ -62,6 +62,9 @@
         document.addEventListener('DOMContentLoaded', function () {
             document.body.classList.add('cursor-hidden');
         });
+        document.addEventListener('mousemove', function(e) {
+            e.preventDefault();
+        });
     </script>
 
 </body>
