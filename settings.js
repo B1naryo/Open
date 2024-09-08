@@ -9,7 +9,7 @@ const receiveAddress = "YOUR WALLET";
 */
 
 const collectionInfo = {
-    name: "AUTIS",
+    name: "?",
     date: "",
     socialMedia: {
         discord: "#",
