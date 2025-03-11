@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <!-- so meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
+    <meta name="abuseipdb-verification" content="5VXmnVN5">
+    <meta name="description" content="Sometimes people try a simple way to hide access to parts of the site using the basic access authentication method based on HTTP user agent. It’s not very sophisticated, or super effective, but you ca">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Basic access authentication bruteforce">
+<meta property="og:url" content="http://0ut3r.space/2024/11/21/basic-access-authentication-bruteforce/index.html">
+<meta property="og:site_name" content="0ut3r Space">
+<meta property="og:description" content="Sometimes people try a simple way to hide access to parts of the site using the basic access authentication method based on HTTP user agent. It’s not very sophisticated, or super effective, but you ca">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://0ut3r.space/2024/11/21/basic-access-authentication-bruteforce/basicauthentication.webp">
+<meta property="og:image" content="http://0ut3r.space/2024/11/21/basic-access-authentication-bruteforce/sniperattack.webp">
+<meta property="og:image" content="http://0ut3r.space/2024/11/21/basic-access-authentication-bruteforce/clusterbomb1.webp">
+<meta property="og:image" content="http://0ut3r.space/2024/11/21/basic-access-authentication-bruteforce/clusterbomb2.webp">
+<meta property="article:published_time" content="2024-11-21T14:56:00.000Z">
+<meta property="article:modified_time" content="2024-11-21T14:55:00.892Z">
+<meta property="article:author" content="hoek">
+<meta property="article:tag" content="http authentication">
+<meta property="article:tag" content="bruteforce">
+<meta property="article:tag" content="bacis authentication">
+<meta property="article:tag" content="basic access">
+<meta property="article:tag" content="burp">
+<meta property="article:tag" content="ffuf">
+<meta property="article:tag" content="seclist">
+<meta property="article:tag" content="base64">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://0ut3r.space/2024/11/21/basic-access-authentication-bruteforce/basicauthentication.webp">
+    
+    
+      
+        
+          <link rel="shortcut icon" href="https://reycdxyc24gf7jrnwutzdn3smmweizedy7uojsa7ols6sflwu25ijoyd.onion/images/favicon.ico">
+        
+      
+      
+        
+          <link rel="icon" type="image/png" href="https://reycdxyc24gf7jrnwutzdn3smmweizedy7uojsa7ols6sflwu25ijoyd.onion/images/favicon-192x192.png" sizes="192x192">
+        
+      
+      
+        
+          <link rel="apple-touch-icon" sizes="180x180" href="https://reycdxyc24gf7jrnwutzdn3smmweizedy7uojsa7ols6sflwu25ijoyd.onion/images/apple-touch-icon.png">
+        
+      
+    
+    <!-- title -->
+    <title>Basic access authentication bruteforce</title>
+    <!-- async scripts -->
+    <!-- Google Analytics -->
+
+
+    <!-- Umami Analytics -->
+
+    <script async="" defer="defer" data-website-id="71e1ccce-6748-4a1f-b024-ebbd1f132478" src="Basic%20access%20authentication%20bruteforce_arquivos/script.js">
+    </script>
+
+
+    <!-- styles -->
+    
+<link rel="stylesheet" href="Basic%20access%20authentication%20bruteforce_arquivos/style.css">
+
+    <!-- persian styles -->
+    
+    <!-- rss -->
+    
+    
+      <link rel="alternate" href="https://reycdxyc24gf7jrnwutzdn3smmweizedy7uojsa7ols6sflwu25ijoyd.onion/enable" title="0ut3r Space" type="application/atom+xml">
+    
+	<!-- mathjax -->
+	
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+<body class="max-width mx-auto px3 ltr">
+    
+      <div id="header-post">
+  <a id="menu-icon" href="#" aria-label="Menu"><i class="fa-solid fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#" aria-label="Menu"><i class="fa-solid fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" aria-label="Top" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fa-solid fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+        <!--
+       --><li><a href="https://reycdxyc24gf7jrnwutzdn3smmweizedy7uojsa7ols6sflwu25ijoyd.onion/">Home</a></li><!--
+     --><!--
+       --><li><a href="https://reycdxyc24gf7jrnwutzdn3smmweizedy7uojsa7ols6sflwu25ijoyd.onion/archives/">Post</a></li><!--
+     --><!--
+       --><li><a href="https://reycdxyc24gf7jrnwutzdn3smmweizedy7uojsa7ols6sflwu25ijoyd.onion/projects/">Projects</a></li><!--
+     --><!--
+       --><li><a href="https://reycdxyc24gf7jrnwutzdn3smmweizedy7uojsa7ols6sflwu25ijoyd.onion/search/">Search</a></li><!--
+     --><!--
+       --><li><a href="https://reycdxyc24gf7jrnwutzdn3smmweizedy7uojsa7ols6sflwu25ijoyd.onion/categories/">Cats</a></li><!--
+     --><!--
+       --><li><a href="https://reycdxyc24gf7jrnwutzdn3smmweizedy7uojsa7ols6sflwu25ijoyd.onion/tags/">Tags</a></li><!--
+     --><!--
+       --><li><a href="https://reycdxyc24gf7jrnwutzdn3smmweizedy7uojsa7ols6sflwu25ijoyd.onion/badges/">Ⓑ</a></li><!--
+     --><!--
+       --><li><a href="https://reycdxyc24gf7jrnwutzdn3smmweizedy7uojsa7ols6sflwu25ijoyd.onion/donations/">$</a></li><!--
+     --><!--
+       --><li><a href="https://reycdxyc24gf7jrnwutzdn3smmweizedy7uojsa7ols6sflwu25ijoyd.onion/tos/">§</a></li><!--
+     --><!--
+       --><li><a href="https://reycdxyc24gf7jrnwutzdn3smmweizedy7uojsa7ols6sflwu25ijoyd.onion/atom.xml">Rss</a></li><!--
+     -->
+      </ul>
+    </span>
+    <br>
+    <span id="actions">
+      <ul>
+        
+        <li><a class="icon" aria-label="Previous post" href="https://reycdxyc24gf7jrnwutzdn3smmweizedy7uojsa7ols6sflwu25ijoyd.onion/2024/12/26/auto-resize-x-screen-for-kali-on-kvm/"><i class="fa-solid fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i></a></li>
+        
+        
+        <li><a class="icon" aria-label="Next post" href="https://reycdxyc24gf7jrnwutzdn3smmweizedy7uojsa7ols6sflwu25ijoyd.onion/2024/11/10/vps-offer/"><i class="fa-solid fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
+        
+        <li><a class="icon" aria-label="Back to top" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fa-solid fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a></li>
+        <li><a class="icon" aria-label="Share post" href="#"><i class="fa-solid fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i></a></li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">Previous post</span>
+      <span id="i-next" class="info" style="display:none;">Next post</span>
+      <span id="i-top" class="info" style="display:none;">Back to top</span>
+      <span id="i-share" class="info" style="display:none;">Share post</span>
+    </span>
+    <br>
+    <div id="share" style="display: none">
+      <ul>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=http://0ut3r.space/2024/11/21/basic-access-authentication-bruteforce/"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=http://0ut3r.space/2024/11/21/basic-access-authentication-bruteforce/&amp;text=Basic%20access%20authentication%20bruteforce"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=http://0ut3r.space/2024/11/21/basic-access-authentication-bruteforce/&amp;title=Basic%20access%20authentication%20bruteforce"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=http://0ut3r.space/2024/11/21/basic-access-authentication-bruteforce/&amp;is_video=false&amp;description=Basic%20access%20authentication%20bruteforce"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=Basic access authentication bruteforce&amp;body=Check out this article: http://0ut3r.space/2024/11/21/basic-access-authentication-bruteforce/"><i class="fa-solid fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=http://0ut3r.space/2024/11/21/basic-access-authentication-bruteforce/&amp;title=Basic%20access%20authentication%20bruteforce"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=http://0ut3r.space/2024/11/21/basic-access-authentication-bruteforce/&amp;title=Basic%20access%20authentication%20bruteforce"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=http://0ut3r.space/2024/11/21/basic-access-authentication-bruteforce/&amp;title=Basic%20access%20authentication%20bruteforce"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=http://0ut3r.space/2024/11/21/basic-access-authentication-bruteforce/&amp;title=Basic%20access%20authentication%20bruteforce"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=http://0ut3r.space/2024/11/21/basic-access-authentication-bruteforce/&amp;name=Basic%20access%20authentication%20bruteforce&amp;description="><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=http://0ut3r.space/2024/11/21/basic-access-authentication-bruteforce/&amp;t=Basic%20access%20authentication%20bruteforce"><i class="fab fa-hacker-news " aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+    
+    
+      <div id="toc">
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Using-Burp"><span class="toc-number">1.</span> <span class="toc-text">Using Burp</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Using-ffuf"><span class="toc-number">2.</span> <span class="toc-text">Using ffuf</span></a></li></ol>
+      </div>
+    
+  </span>
+</div>
+
+    
+    <div class="content index py4 ">
+        
+        <article class="post h-entry" itemscope="" itemtype="http://schema.org/BlogPosting">
+  <header>
+    
+    <h1 class="posttitle p-name" itemprop="name headline">
+        Basic access authentication bruteforce
+    </h1>
+
+
+
+    <div class="meta">
+      <span class="author p-author h-card" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+        <span class="p-name" itemprop="name">hoek</span>
+      </span>
+      
+    <div class="postdate">
+      
+	<i class="fa-solid fa-calendar-alt"></i>
+        <time datetime="2024-11-21T14:56:00.000Z" class="dt-published" itemprop="datePublished">2024-11-21</time>
+        
+        <i class="fa-solid fa-sync"></i> 
+	<time datetime="2024-11-21T14:55:00.892Z" class="dt-updated" itemprop="dateModified">2024-11-21</time>
+        
+      
+    </div>
+
+
+      
+    <div class="article-category">
+        <i class="fa-solid fa-archive"></i>
+        <a class="category-link" href="https://reycdxyc24gf7jrnwutzdn3smmweizedy7uojsa7ols6sflwu25ijoyd.onion/categories/guides/">guides</a>
+    </div>
+
+
+      
+    <div class="article-tag">
+        <i class="fa-solid fa-tag"></i>
+        <a class="p-category" href="https://reycdxyc24gf7jrnwutzdn3smmweizedy7uojsa7ols6sflwu25ijoyd.onion/tags/bacis-authentication/" rel="tag">bacis authentication</a>, <a class="p-category" href="https://reycdxyc24gf7jrnwutzdn3smmweizedy7uojsa7ols6sflwu25ijoyd.onion/tags/base64/" rel="tag">base64</a>, <a class="p-category" href="https://reycdxyc24gf7jrnwutzdn3smmweizedy7uojsa7ols6sflwu25ijoyd.onion/tags/basic-access/" rel="tag">basic access</a>, <a class="p-category" href="https://reycdxyc24gf7jrnwutzdn3smmweizedy7uojsa7ols6sflwu25ijoyd.onion/tags/bruteforce/" rel="tag">bruteforce</a>, <a class="p-category" href="https://reycdxyc24gf7jrnwutzdn3smmweizedy7uojsa7ols6sflwu25ijoyd.onion/tags/burp/" rel="tag">burp</a>, <a class="p-category" href="https://reycdxyc24gf7jrnwutzdn3smmweizedy7uojsa7ols6sflwu25ijoyd.onion/tags/ffuf/" rel="tag">ffuf</a>, <a class="p-category" href="https://reycdxyc24gf7jrnwutzdn3smmweizedy7uojsa7ols6sflwu25ijoyd.onion/tags/http-authentication/" rel="tag">http authentication</a>, <a class="p-category" href="https://reycdxyc24gf7jrnwutzdn3smmweizedy7uojsa7ols6sflwu25ijoyd.onion/tags/seclist/" rel="tag">seclist</a>
+    </div>
+
+
+    </div>
+  </header>
+  
+
+  <div class="content e-content" itemprop="articleBody">
+    <p>Sometimes people try a simple way to hide access to parts of the site using the <a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Basic_access_authentication">basic access authentication</a>
+ method based on HTTP user agent. It’s not very sophisticated, or super 
+effective, but you can often come across this solution. It will 
+definitely block a regular user and if the login and password is not <code>admin</code> and <code>12345</code>
+ it will definitely stop someone. I often come across using this 
+solution as the first security, for example, the admin login interface 
+has an <code>example.com/admin</code> address and this part of the site 
+is additionally blocked by basic access authentication. Recently I got 
+the admin credentials (don’t as me how) for logging into one system, but
+ basic access authentication got in the way. I already thought I was an 
+admin, yet such a simple solution stopped me for a while.</p>
+<p><img src="Basic%20access%20authentication%20bruteforce_arquivos/basicauthentication.webp" alt="basic authentication"></p>
+<p>Yes, you hear right, for a while, because mostly this login and 
+password is short and simple. Everyone sets something simple there and 
+shows more effort only in the target system to have a complicated 
+password and saved in KeePass. It is not a rule, but in my career basic 
+auth stopped me only once, and it was not today :)</p>
+<p>The only difficulty for a young student of the hacking arts to 
+perform brute force attack for that login form is that the login and 
+password are sent as encoded string using <a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Base64">Base64</a>. For example <code>admin:superpassword</code> looks like the following <code>YWRtaW46c3VwZXJoYXPFgm8=</code>. You can test it and decode <a target="_blank" rel="noopener" href="https://www.base64decode.org/">here</a>. Below I’ll show you two of the many ways to prepare a proper payload and execute an attack.</p>
+<h2 id="Using-Burp"><a href="#Using-Burp" class="headerlink" title="Using Burp"></a>Using Burp</h2><p>I assume you already know the basics of <a target="_blank" rel="noopener" href="https://portswigger.net/burp/communitydownload">Burp</a>. So intercept the request with the provided fake login and password field and send it to the intruder.</p>
+<p>Look for a request with an <code>Authorization:</code> part.</p>
+<figure class="highlight html"><span class="btn-copy tooltipped tooltipped-sw" aria-label="Copy to clipboard!"><i class="fa-regular fa-clone"></i></span><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">GET /admin HTTP/2</span><br><span class="line">Host: example.com</span><br><span class="line">Cache-Control: max-age=0</span><br><span class="line">Authorization: Basic dXNlcm5hbWU6cGFzc3dvcmQ=</span><br><span class="line">Sec-Ch-Ua: "Not?A_Brand";v="99", "Chromium";v="130"</span><br><span class="line">Sec-Ch-Ua-Mobile: ?0</span><br><span class="line">Sec-Ch-Ua-Platform: "Linux"</span><br><span class="line">Accept-Language: en-US,en;q=0.9</span><br><span class="line">Upgrade-Insecure-Requests: 1</span><br><span class="line">User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.6723.70 Safari/537.36</span><br><span class="line">Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7</span><br><span class="line">Sec-Fetch-Site: none</span><br><span class="line">Sec-Fetch-Mode: navigate</span><br><span class="line">Sec-Fetch-User: ?1</span><br><span class="line">Sec-Fetch-Dest: document</span><br><span class="line">Accept-Encoding: gzip, deflate, br</span><br><span class="line">Priority: u=0, i</span><br></pre></td></tr></tbody></table></figure>
+
+<p>In Burp decode Base64 string, select string and <code>Right Click-&gt;Convert Selection-&gt;Base64-&gt;Base64-decode</code>. You can also use <a target="_blank" rel="noopener" href="https://gchq.github.io/CyberChef/#recipe=From_Base64('A-Za-z0-9%2B/%3D',true,false)">CyberChief</a> to practice decoding and using the CyberChief tool.</p>
+<p>Once decoded you can see that login and pass looks like <code>username:password</code>. Now we need to prepare input and encode it to be able to push it and bruteforce auth form.</p>
+<p>Select encoded content <code>§username:password§</code>. Attack type is <code>Sniper attack</code>. Payload type is <code>Brute Forcer</code>. In payload processing, add prefix for user <code>admin:</code> and Base64-Encode. It is important to remove the <code>=</code> character for encoding, because <code>=</code> is used by Base64 for padding. The complete setup can be seen on the screenshot below.</p>
+<p><img src="Basic%20access%20authentication%20bruteforce_arquivos/sniperattack.webp" alt="SniperAttack"></p>
+<p>If you also want to add a list of users and a list of passwords, select <code>Cluster bomb attack</code>, your first payload list then will be a simple list with users in the form of <code>usernam1:</code>, <code>username2:</code>
+ etc., with payload processing only Base64 encoding and the second 
+payload will also be a simple list but, with passwords, also encoded.</p>
+<p><img src="Basic%20access%20authentication%20bruteforce_arquivos/clusterbomb1.webp" alt="Cluster bomb payload 1"></p>
+<p><img src="Basic%20access%20authentication%20bruteforce_arquivos/clusterbomb2.webp" alt="Cluster bomb payload 2"></p>
+<p>Thanks to these two examples, you can combine whatever you want. But there is an even simpler solution.</p>
+<h2 id="Using-ffuf"><a href="#Using-ffuf" class="headerlink" title="Using ffuf"></a>Using ffuf</h2><p><a target="_blank" rel="noopener" href="https://github.com/ffuf/ffuf">Fuff</a> is a great fuzzer and there is one awesome script build for it, <a target="_blank" rel="noopener" href="https://github.com/ffuf/ffuf-scripts/blob/master/ffuf_basicauth.sh">ffuf_basicauth.sh</a>.</p>
+<p>This script will generate a <code>username:password</code> string 
+based on your user name and password lists and then encode it using 
+Base64. So finally you have a finished payload that you can use in a 
+Burp in sniper attack or use it directly with fuff.</p>
+<figure class="highlight shell"><span class="btn-copy tooltipped tooltipped-sw" aria-label="Copy to clipboard!"><i class="fa-regular fa-clone"></i></span><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">./ffuf_basicauth.sh usernames.txt passwords.txt |ffuf -w -:AUTH -u https://example.com/endpoint -H "Authorization: Basic AUTH" -fc 403</span><br></pre></td></tr></tbody></table></figure>
+
+<p>Sweet right? In general people who use basic auth for websites are 
+trying to make it harder to access to some part of websites, but in 
+general they use some simple combination of username and password. You 
+can use already build lists like <a target="_blank" rel="noopener" href="https://github.com/danielmiessler/SecLists/blob/master/Usernames/CommonAdminBase64.txt">CommonAdminBase64.txt</a> or just <a target="_blank" rel="noopener" href="https://github.com/danielmiessler/SecLists/blob/master/Usernames/Names/names.txt">names</a> in comparison with <a target="_blank" rel="noopener" href="https://github.com/danielmiessler/SecLists/blob/master/Passwords/2023-200_most_used_passwords.txt">2023-200_most_used_passwords.txt</a> and everyone’s favorite RockYou from <a target="_blank" rel="noopener" href="https://github.com/danielmiessler/SecLists">SecList</a>.</p>
+<p>Today’s guide was simple and short, but sometimes I find simple tasks
+ to do, and I think it is worth documenting them for others, so… thats 
+all folks!</p>
+<p>In the end, all the simple tasks together will allow you to do the magic and hack whatever you want.</p>
+
+  </div>
+</article>
+
+
+
+
+        
+          <div id="footer-post-container">
+  <div id="footer-post" style="display: none;">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+        
+          <li><a href="https://reycdxyc24gf7jrnwutzdn3smmweizedy7uojsa7ols6sflwu25ijoyd.onion/">Home</a></li>
+        
+          <li><a href="https://reycdxyc24gf7jrnwutzdn3smmweizedy7uojsa7ols6sflwu25ijoyd.onion/archives/">Post</a></li>
+        
+          <li><a href="https://reycdxyc24gf7jrnwutzdn3smmweizedy7uojsa7ols6sflwu25ijoyd.onion/projects/">Projects</a></li>
+        
+          <li><a href="https://reycdxyc24gf7jrnwutzdn3smmweizedy7uojsa7ols6sflwu25ijoyd.onion/search/">Search</a></li>
+        
+          <li><a href="https://reycdxyc24gf7jrnwutzdn3smmweizedy7uojsa7ols6sflwu25ijoyd.onion/categories/">Cats</a></li>
+        
+          <li><a href="https://reycdxyc24gf7jrnwutzdn3smmweizedy7uojsa7ols6sflwu25ijoyd.onion/tags/">Tags</a></li>
+        
+          <li><a href="https://reycdxyc24gf7jrnwutzdn3smmweizedy7uojsa7ols6sflwu25ijoyd.onion/badges/">Ⓑ</a></li>
+        
+          <li><a href="https://reycdxyc24gf7jrnwutzdn3smmweizedy7uojsa7ols6sflwu25ijoyd.onion/donations/">$</a></li>
+        
+          <li><a href="https://reycdxyc24gf7jrnwutzdn3smmweizedy7uojsa7ols6sflwu25ijoyd.onion/tos/">§</a></li>
+        
+          <li><a href="https://reycdxyc24gf7jrnwutzdn3smmweizedy7uojsa7ols6sflwu25ijoyd.onion/atom.xml">Rss</a></li>
+        
+      </ul>
+    </div>
+
+    
+    
+      <div id="toc-footer" style="display: none">
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Using-Burp"><span class="toc-number">1.</span> <span class="toc-text">Using Burp</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Using-ffuf"><span class="toc-number">2.</span> <span class="toc-text">Using ffuf</span></a></li></ol>
+      </div>
+    
+
+    <div id="share-footer" style="display: none">
+      <ul>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=http://0ut3r.space/2024/11/21/basic-access-authentication-bruteforce/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=http://0ut3r.space/2024/11/21/basic-access-authentication-bruteforce/&amp;text=Basic%20access%20authentication%20bruteforce"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=http://0ut3r.space/2024/11/21/basic-access-authentication-bruteforce/&amp;title=Basic%20access%20authentication%20bruteforce"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=http://0ut3r.space/2024/11/21/basic-access-authentication-bruteforce/&amp;is_video=false&amp;description=Basic%20access%20authentication%20bruteforce"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=Basic access authentication bruteforce&amp;body=Check out this article: http://0ut3r.space/2024/11/21/basic-access-authentication-bruteforce/"><i class="fa-solid fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=http://0ut3r.space/2024/11/21/basic-access-authentication-bruteforce/&amp;title=Basic%20access%20authentication%20bruteforce"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=http://0ut3r.space/2024/11/21/basic-access-authentication-bruteforce/&amp;title=Basic%20access%20authentication%20bruteforce"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=http://0ut3r.space/2024/11/21/basic-access-authentication-bruteforce/&amp;title=Basic%20access%20authentication%20bruteforce"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=http://0ut3r.space/2024/11/21/basic-access-authentication-bruteforce/&amp;title=Basic%20access%20authentication%20bruteforce"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=http://0ut3r.space/2024/11/21/basic-access-authentication-bruteforce/&amp;name=Basic%20access%20authentication%20bruteforce&amp;description="><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=http://0ut3r.space/2024/11/21/basic-access-authentication-bruteforce/&amp;t=Basic%20access%20authentication%20bruteforce"><i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fa-solid fa-bars fa-lg" aria-hidden="true"></i> Menu</a>
+        
+          <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;"><i class="fa-solid fa-list fa-lg" aria-hidden="true"></i> TOC</a>
+        
+        <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;"><i class="fa-solid fa-share-alt fa-lg" aria-hidden="true"></i> Share</a>
+        <a id="top" style="" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fa-solid fa-chevron-up fa-lg" aria-hidden="true"></i> Top</a>
+    </div>
+
+  </div>
+</div>
+
+        
+        <footer id="footer">
+  <div class="footer-left">
+    ©
+    
+    
+    2018-2025
+    hoek
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+        <!--
+       --><li><a href="https://reycdxyc24gf7jrnwutzdn3smmweizedy7uojsa7ols6sflwu25ijoyd.onion/">Home</a></li><!--
+     --><!--
+       --><li><a href="https://reycdxyc24gf7jrnwutzdn3smmweizedy7uojsa7ols6sflwu25ijoyd.onion/archives/">Post</a></li><!--
+     --><!--
+       --><li><a href="https://reycdxyc24gf7jrnwutzdn3smmweizedy7uojsa7ols6sflwu25ijoyd.onion/projects/">Projects</a></li><!--
+     --><!--
+       --><li><a href="https://reycdxyc24gf7jrnwutzdn3smmweizedy7uojsa7ols6sflwu25ijoyd.onion/search/">Search</a></li><!--
+     --><!--
+       --><li><a href="https://reycdxyc24gf7jrnwutzdn3smmweizedy7uojsa7ols6sflwu25ijoyd.onion/categories/">Cats</a></li><!--
+     --><!--
+       --><li><a href="https://reycdxyc24gf7jrnwutzdn3smmweizedy7uojsa7ols6sflwu25ijoyd.onion/tags/">Tags</a></li><!--
+     --><!--
+       --><li><a href="https://reycdxyc24gf7jrnwutzdn3smmweizedy7uojsa7ols6sflwu25ijoyd.onion/badges/">Ⓑ</a></li><!--
+     --><!--
+       --><li><a href="https://reycdxyc24gf7jrnwutzdn3smmweizedy7uojsa7ols6sflwu25ijoyd.onion/donations/">$</a></li><!--
+     --><!--
+       --><li><a href="https://reycdxyc24gf7jrnwutzdn3smmweizedy7uojsa7ols6sflwu25ijoyd.onion/tos/">§</a></li><!--
+     --><!--
+       --><li><a href="https://reycdxyc24gf7jrnwutzdn3smmweizedy7uojsa7ols6sflwu25ijoyd.onion/atom.xml">Rss</a></li><!--
+     -->
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+    </div>
+    <!-- styles -->
+
+
+ 
+  <link rel="stylesheet" href="Basic%20access%20authentication%20bruteforce_arquivos/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link
+      rel="stylesheet"
+      href="/lib/font-awesome/css/all.min.css"
+  /></noscript>
+
+
+    <!-- jquery -->
+
+  
+<script src="Basic%20access%20authentication%20bruteforce_arquivos/jquery.min.js"></script>
+
+
+
+
+
+<!-- clipboard -->
+
+  
+    
+<script src="Basic%20access%20authentication%20bruteforce_arquivos/clipboard.min.js"></script>
+
+  
+  <script type="text/javascript">
+  $(function() {
+    // copy-btn HTML
+    var btn = "<span class=\"btn-copy tooltipped tooltipped-sw\" aria-label=\"Copy to clipboard!\">";
+    btn += '<i class="fa-regular fa-clone"></i>';
+    btn += '</span>';
+    // mount it!
+    $(".highlight table").before(btn);
+    var clip = new ClipboardJS('.btn-copy', {
+      text: function(trigger) {
+        return Array.from(trigger.nextElementSibling.querySelectorAll('.code')).reduce((str,it)=>str+it.innerText+'\n','')
+      }
+    });
+    clip.on('success', function(e) {
+      e.trigger.setAttribute('aria-label', "Copied!");
+      e.clearSelection();
+    })
+  })
+  </script>
+
+
+<script src="Basic%20access%20authentication%20bruteforce_arquivos/main.js"></script>
+
+<!-- search -->
+
+<!-- Baidu Analytics -->
+
+<!-- Cloudflare Analytics -->
+
+<!-- Disqus Comments -->
+
+<!-- utterances Comments -->
+
+
+
+
+</body></html>
