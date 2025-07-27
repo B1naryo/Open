@@ -1,126 +1,105 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>PUBG Voice Commands - Cyberpunk Style</title>
+  <meta charset="UTF-8">
+  <title>Frases PUBG com Americanos</title>
   <style>
     body {
-      background: #0f0f1b;
-      color: #00ffea;
+      background: #0f0f0f;
+      color: #00ffcc;
       font-family: 'Courier New', Courier, monospace;
       padding: 20px;
     }
-
     h1 {
+      color: #ff00ff;
       text-align: center;
-      color: #ff0080;
-      text-shadow: 0 0 10px #ff0080;
+      border-bottom: 2px solid #ff00ff;
+      padding-bottom: 10px;
     }
-
-    .category {
-      margin: 30px 0;
-      border-left: 4px solid #00ffff;
-      padding-left: 15px;
+    h2 {
+      color: #00ffff;
+      margin-top: 30px;
+      border-left: 4px solid #ff00ff;
+      padding-left: 10px;
     }
-
-    .phrase {
-      background: #1a1a2e;
-      margin: 10px 0;
-      padding: 10px;
-      border-radius: 5px;
-      box-shadow: 0 0 5px #00ffff88;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
+    ul {
+      list-style-type: none;
+      padding-left: 0;
     }
-
-    .phrase-text {
-      flex: 1;
-      margin-right: 10px;
+    li {
+      background: rgba(255, 255, 255, 0.05);
+      margin: 8px 0;
+      padding: 8px 12px;
+      border-left: 3px solid #00ffcc;
     }
-
-    .btn {
-      background-color: #ff0080;
-      border: none;
-      padding: 6px 10px;
-      color: black;
-      margin-left: 5px;
-      cursor: pointer;
-      border-radius: 3px;
-      font-weight: bold;
-      box-shadow: 0 0 5px #ff0080;
+    b {
+      color: #ffffff;
     }
-
-    .btn:hover {
-      background-color: #ff33a6;
+    span {
+      color: #ffcc00;
+      font-style: italic;
     }
   </style>
 </head>
 <body>
-  <h1>PUBG Voice Commands</h1>
+  <h1>🎮 Frases em Inglês para Jogar PUBG</h1>
 
-  <div class="category">
-    <h2>📌 Comunicação Básica</h2>
-    <div class="phrase">
-      <div class="phrase-text">Follow me!</div>
-      <button class="btn" onclick="speak('Follow me!')">🔊</button>
-      <button class="btn" onclick="copyText('Follow me!')">📋</button>
-    </div>
-    <div class="phrase">
-      <div class="phrase-text">I need help!</div>
-      <button class="btn" onclick="speak('I need help!')">🔊</button>
-      <button class="btn" onclick="copyText('I need help!')">📋</button>
-    </div>
-    <div class="phrase">
-      <div class="phrase-text">Get in the car!</div>
-      <button class="btn" onclick="speak('Get in the car!')">🔊</button>
-      <button class="btn" onclick="copyText('Get in the car!')">📋</button>
-    </div>
-    <div class="phrase">
-      <div class="phrase-text">Stay together!</div>
-      <button class="btn" onclick="speak('Stay together!')">🔊</button>
-      <button class="btn" onclick="copyText('Stay together!')">📋</button>
-    </div>
-  </div>
+  <h2>🎧 Comunicação Básica</h2>
+  <ul>
+    <li><b>Hello guys</b> <span>(Rélou gás)</span> → Olá pessoal</li>
+    <li><b>How are you?</b> <span>(Ráu ar iú?)</span> → Como vocês estão?</li>
+    <li><b>I don’t speak English very well</b> <span>(Ai don spik Ínglish véry uéll)</span> → Eu não falo inglês muito bem</li>
+    <li><b>Let’s win this!</b> <span>(Léts uin dis!)</span> → Vamos ganhar essa!</li>
+    <li><b>Where are we landing?</b> <span>(Uér ar ui léndin?)</span> → Onde vamos cair?</li>
+    <li><b>Mark the location</b> <span>(Mark dá louquêichan)</span> → Marca o local</li>
+    <li><b>Follow me</b> <span>(Fólou mi)</span> → Me segue</li>
+    <li><b>Stay together</b> <span>(Stêi tuguéder)</span> → Fiquem juntos</li>
+    <li><b>Nice to meet you</b> <span>(Nais tú mítiu)</span> → Prazer em te conhecer</li>
+  </ul>
 
-  <div class="category">
-    <h2>🎯 Durante a Luta</h2>
-    <div class="phrase">
-      <div class="phrase-text">Enemy ahead!</div>
-      <button class="btn" onclick="speak('Enemy ahead!')">🔊</button>
-      <button class="btn" onclick="copyText('Enemy ahead!')">📋</button>
-    </div>
-    <div class="phrase">
-      <div class="phrase-text">Enemy spotted!</div>
-      <button class="btn" onclick="speak('Enemy spotted!')">🔊</button>
-      <button class="btn" onclick="copyText('Enemy spotted!')">📋</button>
-    </div>
-    <div class="phrase">
-      <div class="phrase-text">Knocked one!</div>
-      <button class="btn" onclick="speak('Knocked one!')">🔊</button>
-      <button class="btn" onclick="copyText('Knocked one!')">📋</button>
-    </div>
-    <div class="phrase">
-      <div class="phrase-text">I need ammo!</div>
-      <button class="btn" onclick="speak('I need ammo!')">🔊</button>
-      <button class="btn" onclick="copyText('I need ammo!')">📋</button>
-    </div>
-  </div>
+  <h2>🧭 Comunicação Durante a Luta</h2>
+  <ul>
+    <li><b>Enemy spotted</b> <span>(Énemi spárired)</span> → Inimigo avistado</li>
+    <li><b>I need help</b> <span>(Ai níid rélp)</span> → Preciso de ajuda</li>
+    <li><b>I’m healing</b> <span>(Aim ríilin)</span> → Estou me curando</li>
+    <li><b>I got you</b> <span>(Ai gat iú)</span> → Te salvei</li>
+    <li><b>Nice shot!</b> <span>(Nais xót!)</span> → Boa bala!</li>
+    <li><b>Enemy in front</b> <span>(Énemi in frânt)</span> → Inimigo à frente</li>
+    <li><b>Behind us</b> <span>(Biráind âs)</span> → Atrás da gente</li>
+    <li><b>On the roof</b> <span>(On dá rúuf)</span> → No telhado</li>
+    <li><b>He's low</b> <span>(Rís lóu)</span> → Ele tá quase morrendo</li>
+    <li><b>One shot</b> <span>(Uan xót)</span> → Um tiro mata ele</li>
+    <li><b>Knocked one</b> <span>(Nókt uan)</span> → Derrubei um</li>
+    <li><b>I killed him</b> <span>(Ai kild rim)</span> → Matei ele</li>
+    <li><b>Push! Push!</b> <span>(Pux! Pux!)</span> → Avança!</li>
+    <li><b>Fall back</b> <span>(Fól bék)</span> → Recuar</li>
+    <li><b>Cover me</b> <span>(Câver mi)</span> → Me dá cobertura</li>
+    <li><b>Flank them</b> <span>(Flénk dém)</span> → Flanqueia eles</li>
+    <li><b>I have no ammo</b> <span>(Ai rév nou émou)</span> → Tô sem munição</li>
+  </ul>
 
-  <script>
-    function speak(text) {
-      const utterance = new SpeechSynthesisUtterance(text);
-      utterance.lang = 'en-US';
-      speechSynthesis.speak(utterance);
-    }
+  <h2>📦 Loot e Estratégia</h2>
+  <ul>
+    <li><b>I need a gun</b> <span>(Ai níid a gân)</span> → Preciso de uma arma</li>
+    <li><b>I need 5.56</b> <span>(Ai níid fáiv point fáiv síx)</span> → Preciso de munição 5.56</li>
+    <li><b>I need 7.62</b> <span>(Ai níid sévên point sics tú)</span> → Preciso de munição 7.62</li>
+    <li><b>Level 3 helmet here</b> <span>(Lévol trí rélmit hiêr)</span> → Capacete nível 3 aqui</li>
+    <li><b>Loot here</b> <span>(Lút hiêr)</span> → Tem loot aqui</li>
+    <li><b>Let's go zone</b> <span>(Léts gôu zôn)</span> → Vamos pra safe</li>
+    <li><b>Drop incoming</b> <span>(Dróp incâmin)</span> → Drop chegando</li>
+    <li><b>Let's rotate</b> <span>(Léts rôteit)</span> → Vamos rotacionar</li>
+  </ul>
 
-    function copyText(text) {
-      navigator.clipboard.writeText(text).then(() => {
-        alert('Copied: ' + text);
-      });
-    }
-  </script>
+  <h2>🎙 Dicas Extras</h2>
+  <ul>
+    <li><b>Lagging! Lagging!</b> <span>(Léguin! Léguin!)</span> → Travando!</li>
+    <li><b>Quiet, please</b> <span>(Kuáiét, pliz)</span> → Silêncio, por favor</li>
+    <li><b>You’re cracked!</b> <span>(Iur krékt!)</span> → Você joga muito!</li>
+    <li><b>Bro, you're insane!</b> <span>(Brô, iur insane!)</span> → Mano, você é insano!</li>
+    <li><b>GG, well played</b> <span>(Djídjí, uél plêid)</span> → Bom jogo, jogou bem</li>
+    <li><b>Thanks bro</b> <span>(Tenks brôu)</span> → Valeu, mano</li>
+    <li><b>Sorry, my bad</b> <span>(Sóri, mai béd)</span> → Foi mal</li>
+  </ul>
+
 </body>
 </html>
