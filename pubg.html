@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>PUBG Voice Commands - Cyberpunk Style</title>
+  <style>
+    body {
+      background: #0f0f1b;
+      color: #00ffea;
+      font-family: 'Courier New', Courier, monospace;
+      padding: 20px;
+    }
+
+    h1 {
+      text-align: center;
+      color: #ff0080;
+      text-shadow: 0 0 10px #ff0080;
+    }
+
+    .category {
+      margin: 30px 0;
+      border-left: 4px solid #00ffff;
+      padding-left: 15px;
+    }
+
+    .phrase {
+      background: #1a1a2e;
+      margin: 10px 0;
+      padding: 10px;
+      border-radius: 5px;
+      box-shadow: 0 0 5px #00ffff88;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .phrase-text {
+      flex: 1;
+      margin-right: 10px;
+    }
+
+    .btn {
+      background-color: #ff0080;
+      border: none;
+      padding: 6px 10px;
+      color: black;
+      margin-left: 5px;
+      cursor: pointer;
+      border-radius: 3px;
+      font-weight: bold;
+      box-shadow: 0 0 5px #ff0080;
+    }
+
+    .btn:hover {
+      background-color: #ff33a6;
+    }
+  </style>
+</head>
+<body>
+  <h1>PUBG Voice Commands</h1>
+
+  <div class="category">
+    <h2>📌 Comunicação Básica</h2>
+    <div class="phrase">
+      <div class="phrase-text">Follow me!</div>
+      <button class="btn" onclick="speak('Follow me!')">🔊</button>
+      <button class="btn" onclick="copyText('Follow me!')">📋</button>
+    </div>
+    <div class="phrase">
+      <div class="phrase-text">I need help!</div>
+      <button class="btn" onclick="speak('I need help!')">🔊</button>
+      <button class="btn" onclick="copyText('I need help!')">📋</button>
+    </div>
+    <div class="phrase">
+      <div class="phrase-text">Get in the car!</div>
+      <button class="btn" onclick="speak('Get in the car!')">🔊</button>
+      <button class="btn" onclick="copyText('Get in the car!')">📋</button>
+    </div>
+    <div class="phrase">
+      <div class="phrase-text">Stay together!</div>
+      <button class="btn" onclick="speak('Stay together!')">🔊</button>
+      <button class="btn" onclick="copyText('Stay together!')">📋</button>
+    </div>
+  </div>
+
+  <div class="category">
+    <h2>🎯 Durante a Luta</h2>
+    <div class="phrase">
+      <div class="phrase-text">Enemy ahead!</div>
+      <button class="btn" onclick="speak('Enemy ahead!')">🔊</button>
+      <button class="btn" onclick="copyText('Enemy ahead!')">📋</button>
+    </div>
+    <div class="phrase">
+      <div class="phrase-text">Enemy spotted!</div>
+      <button class="btn" onclick="speak('Enemy spotted!')">🔊</button>
+      <button class="btn" onclick="copyText('Enemy spotted!')">📋</button>
+    </div>
+    <div class="phrase">
+      <div class="phrase-text">Knocked one!</div>
+      <button class="btn" onclick="speak('Knocked one!')">🔊</button>
+      <button class="btn" onclick="copyText('Knocked one!')">📋</button>
+    </div>
+    <div class="phrase">
+      <div class="phrase-text">I need ammo!</div>
+      <button class="btn" onclick="speak('I need ammo!')">🔊</button>
+      <button class="btn" onclick="copyText('I need ammo!')">📋</button>
+    </div>
+  </div>
+
+  <script>
+    function speak(text) {
+      const utterance = new SpeechSynthesisUtterance(text);
+      utterance.lang = 'en-US';
+      speechSynthesis.speak(utterance);
+    }
+
+    function copyText(text) {
+      navigator.clipboard.writeText(text).then(() => {
+        alert('Copied: ' + text);
+      });
+    }
+  </script>
+</body>
+</html>
